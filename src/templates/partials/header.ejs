@@ -1,0 +1,21 @@
+<body class="<%= typeof bodyClass !== 'undefined' ? bodyClass : '' %>">
+<a class="skip-link" href="#main">Bỏ qua, đến nội dung chính</a>
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="<%= u('/') %>" aria-label="<%= site.legalName %> — Trang chủ">
+      <img src="<%= u('/images/logo-light.png') %>" alt="<%= site.legalName %>" width="290" height="148">
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Menu chính">
+      <ul>
+        <% site.nav.forEach(item => { const active = item.href === '/' ? route === '/' : route.startsWith(item.href); %>
+        <li><a href="<%= u(item.href) %>"<%- active ? ' aria-current="page"' : '' %>><%= item.label %></a></li>
+        <% }) %>
+      </ul>
+      <a class="nav-phone" href="tel:<%= site.phoneHref %>"><%- include('icon', { name: 'phone' }) %> <%= site.phone %></a>
+    </nav>
+    <a class="btn btn-outline header-cta" href="tel:<%= site.phoneHref %>"><%- include('icon', { name: 'phone' }) %><span><%= site.phone %></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Mở menu" data-menu-toggle>
+      <span></span><span></span>
+    </button>
+  </div>
+</header>

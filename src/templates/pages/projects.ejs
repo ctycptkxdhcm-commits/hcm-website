@@ -1,0 +1,20 @@
+<%- include('../partials/head', { description: `${projectCount} công trình biệt thự, nhà phố, căn hộ, văn phòng do ${site.legalName} thiết kế và thi công.` }) %>
+<%- include('../partials/header', { bodyClass: 'has-hero' }) %>
+<main id="main">
+  <%- include('../partials/page-hero', { eyebrow: 'Dự án', heading: 'Công trình <em>đã thực hiện</em>', lead: `${projectCount} dự án kiến trúc, nội thất và xây dựng trọn gói.`, image: projects[2] && projects[2].cover.hero }) %>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="filters filters-wide reveal" role="group" aria-label="Lọc theo loại công trình" data-filters="all-grid" data-hash>
+        <% categories.forEach((c, i) => { const n = c.key === 'all' ? projects.length : projects.filter(p => p.category === c.key).length; %>
+        <button type="button" class="filter<%= i === 0 ? ' is-active' : '' %>" data-filter="<%= c.key %>" aria-pressed="<%= i === 0 %>"><%= c.label %> <sup><%= n %></sup></button>
+        <% }) %>
+      </div>
+      <p class="sr-only" aria-live="polite" data-filter-status></p>
+      <div class="project-grid" id="all-grid">
+        <% projects.forEach(p => { %><%- include('../partials/project-card', { p }) %><% }) %>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include('../partials/footer') %>

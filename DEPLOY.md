@@ -1,92 +1,52 @@
-# Hướng dẫn đưa website lên GitHub và Hostinger
+# Đưa website lên mạng
 
-## 1. Đẩy code lên GitHub
+## 1. Miễn phí với GitHub Pages (khuyên dùng lúc đầu)
 
-1. Vào https://github.com/new → tạo repository (ví dụ `hcm-website`), chọn **Private**, **không** tick "Add README".
-2. Trong thư mục dự án chạy:
+Địa chỉ web sẽ có dạng `https://<tai-khoan>.github.io/<ten-repo>/`. Mỗi lần push code, GitHub tự build và cập nhật (~1–2 phút).
 
-```bash
-git remote add origin https://github.com/<tai-khoan>/hcm-website.git
-git push -u origin main
-```
+1. Đăng nhập https://github.com (dùng **Continue with Google**).
+2. Vào https://github.com/new → tên repo, ví dụ `hcm-website` → chọn **Public** → **Create repository**.
+   *(GitHub Pages miễn phí yêu cầu repo Public. Code web tĩnh không chứa mật khẩu nên public là an toàn.)*
+3. Trong thư mục dự án:
 
-File `.env` (mật khẩu SMTP) đã nằm trong `.gitignore` nên **không** bị đẩy lên GitHub.
+   ```bash
+   git remote add origin https://github.com/<tai-khoan>/hcm-website.git
+   git push -u origin main
+   ```
 
----
+   Lần đầu push, Windows sẽ mở cửa sổ đăng nhập GitHub — chọn đăng nhập bằng trình duyệt.
+4. Trên GitHub: repo → **Settings** → **Pages** → mục *Build and deployment* → **Source: GitHub Actions**.
+5. Vào tab **Actions** xem tiến trình. Khi có dấu ✓ xanh, mở `https://<tai-khoan>.github.io/hcm-website/`.
 
-## 2A. Hostinger Business / Cloud Hosting (khuyên dùng — có mục Node.js)
+### Gắn tên miền riêng (khi đã mua)
+1. Repo → **Settings → Pages → Custom domain** → nhập `hcmdesign.vn` (ví dụ) → Save → tick **Enforce HTTPS**.
+2. Tại nơi mua tên miền, thêm bản ghi DNS:
+   - `A` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - `CNAME` `www` → `<tai-khoan>.github.io`
+3. Vào **Actions → Deploy GitHub Pages → Run workflow** để build lại với tên miền mới.
 
-Các gói **Business Web Hosting** và **Cloud Startup/Professional/Enterprise** hỗ trợ ứng dụng Node.js trực tiếp trong hPanel.
-(Gói Single/Premium **không** chạy được Node.js.)
-
-1. hPanel → **Websites** → **Add website** → chọn **Node.js Apps** (hoặc *Websites → Node.js → Create*).
-2. Chọn **Import Git repository** → kết nối GitHub → chọn repo `hcm-website`, nhánh `main`.
-3. Cấu hình build:
-   - **Node version:** 20.x hoặc 22.x
-   - **Install command:** `npm install`
-   - **Build command:** *(để trống)*
-   - **Start command / Entry file:** `npm start` (hoặc `server.js`)
-4. **Environment variables** — thêm các biến trong `.env.example`:
-   `NODE_ENV=production`, `SITE_URL=https://ten-mien-cua-ban.vn`, `SMTP_HOST=smtp.hostinger.com`, `SMTP_PORT=465`, `SMTP_USER`, `SMTP_PASS`, `CONTACT_TO`.
-   *Không đặt `PORT` — Hostinger tự cấp.*
-5. Bấm **Deploy**. Mỗi lần `git push` lên `main`, Hostinger sẽ tự deploy lại (có thể bật/tắt trong cài đặt app).
-6. Gắn tên miền → bật **SSL** miễn phí trong hPanel → *Security → SSL*.
-
-> Giao diện hPanel thay đổi theo thời gian; nếu tên mục khác, tìm "Node.js" trong ô tìm kiếm của hPanel.
-
-### Tạo email SMTP cho form liên hệ
-hPanel → **Emails** → tạo hộp thư `info@ten-mien.vn` → dùng chính địa chỉ & mật khẩu đó cho `SMTP_USER` / `SMTP_PASS`.
+### Google Analytics
+Repo → **Settings → Secrets and variables → Actions → Variables** → thêm `GA_ID` = `G-XXXXXXXXXX` → chạy lại workflow.
 
 ---
 
-## 2B. Hostinger VPS (toàn quyền, Ubuntu)
+## 2. Hostinger (khi muốn dùng hosting trả phí + email tên miền)
 
-```bash
-# Cài Node.js 22 + PM2 + Nginx
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-sudo apt install -y nodejs nginx git
-sudo npm i -g pm2
+Website là trang tĩnh nên **mọi gói Hostinger** (kể cả Single/Premium rẻ nhất) đều chạy được, không cần gói Node.js.
 
-# Lấy code
-cd /var/www && sudo git clone https://github.com/<tai-khoan>/hcm-website.git
-cd hcm-website && npm ci --omit=dev
-cp .env.example .env && nano .env      # điền SITE_URL, SMTP_...
+**Cách A — Git trên hPanel (tự cập nhật):**
+1. Trên máy: `SITE_URL=https://ten-mien.vn npm run build`
+2. Đẩy thư mục `dist/` lên một nhánh riêng, ví dụ `deploy`, rồi hPanel → **Websites → Advanced → Git** → kết nối repo, nhánh `deploy`, thư mục `public_html`.
 
-# Chạy nền + tự khởi động lại khi reboot
-pm2 start ecosystem.config.cjs && pm2 save && pm2 startup
-```
+**Cách B — tải file (đơn giản nhất):**
+1. `SITE_URL=https://ten-mien.vn npm run build`
+2. hPanel → **File Manager** → `public_html` → tải toàn bộ nội dung trong `dist/` lên (nén zip rồi giải nén cho nhanh).
 
-Nginx `/etc/nginx/sites-available/hcm`:
-
-```nginx
-server {
-  server_name ten-mien-cua-ban.vn www.ten-mien-cua-ban.vn;
-  location / {
-    proxy_pass http://127.0.0.1:3000;
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto $scheme;
-  }
-}
-```
-
-```bash
-sudo ln -s /etc/nginx/sites-available/hcm /etc/nginx/sites-enabled/
-sudo nginx -t && sudo systemctl reload nginx
-sudo apt install -y certbot python3-certbot-nginx && sudo certbot --nginx   # SSL miễn phí
-```
-
-Cập nhật code sau này:
-
-```bash
-cd /var/www/hcm-website && git pull && npm ci --omit=dev && pm2 reload hcm-website
-```
+> Trên Windows PowerShell, đặt biến bằng: `$env:SITE_URL="https://ten-mien.vn"; npm run build`
 
 ---
 
-## 3. Kiểm tra sau khi deploy
-
-- `https://ten-mien/healthz` trả về `{"ok":true}`
-- Gửi thử form Liên hệ → kiểm tra hộp thư `CONTACT_TO`
-- Khai báo `https://ten-mien/sitemap.xml` trong Google Search Console
+## 3. Kiểm tra sau khi lên mạng
+- Mở web trên điện thoại, thử menu, lọc dự án, phóng to ảnh.
+- Gửi link qua Zalo/Facebook để xem ảnh xem trước.
+- Khai báo `https://<địa-chỉ-web>/sitemap.xml` trong Google Search Console.

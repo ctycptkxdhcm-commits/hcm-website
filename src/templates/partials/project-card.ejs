@@ -1,0 +1,13 @@
+<article class="project-card reveal" data-category="<%= p.category %>">
+  <a href="<%= u(`/du-an/${p.slug}/`) %>">
+    <div class="project-card-media">
+      <img src="<%= p.cover.src %>" srcset="<%= p.cover.srcset %>" sizes="(max-width: 768px) 100vw, 50vw" alt="<%= p.title %>" width="<%= p.cover.width %>" height="<%= p.cover.height %>" loading="lazy" decoding="async">
+      <% if (p.demo) { %><span class="demo-badge">Ảnh minh họa</span><% } %>
+    </div>
+    <div class="project-card-body">
+      <p class="project-card-meta"><%= p.categoryLabel %><% if (p.location) { %> · <%= p.location %><% } %></p>
+      <h3 class="project-card-title"><%= p.title %></h3>
+      <span class="project-card-more">Xem dự án <%- include('icon', { name: 'arrow' }) %></span>
+    </div>
+  </a>
+</article>

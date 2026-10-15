@@ -1,0 +1,84 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header', { bodyClass: 'has-hero' }) %>
+<main id="main">
+  <section class="project-hero">
+    <img class="project-hero-img" src="<%= project.cover.hero %>" srcset="<%= project.cover.srcset %>" sizes="100vw" alt="<%= project.title %>" fetchpriority="high">
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="container project-hero-content">
+      <nav class="breadcrumb reveal" aria-label="Đường dẫn">
+        <a href="<%= u('/du-an/') %>">Dự án</a><span aria-hidden="true">/</span><a href="<%= u(`/du-an/#${project.category}`) %>"><%= project.categoryLabel %></a>
+      </nav>
+      <% if (project.demo) { %><span class="demo-badge static">Dự án mẫu · Ảnh minh họa</span><% } %>
+      <h1 class="display project-title reveal"><%= project.title %></h1>
+      <% if (project.location) { %><p class="project-location reveal"><%- include('../partials/icon', { name: 'pin' }) %> <%= project.location %></p><% } %>
+    </div>
+  </section>
+
+  <section class="section section-light project-info-section">
+    <div class="container project-layout">
+      <dl class="project-facts reveal">
+        <div><dt>Loại công trình</dt><dd><%= project.categoryLabel %></dd></div>
+        <% if (project.location) { %><div><dt>Địa điểm</dt><dd><%= project.location %></dd></div><% } %>
+        <% if (project.area) { %><div><dt>Diện tích</dt><dd><%= project.area %></dd></div><% } %>
+        <% if (project.floors) { %><div><dt>Quy mô</dt><dd><%= project.floors %></dd></div><% } %>
+        <% if (project.style) { %><div><dt>Phong cách</dt><dd><%= project.style %></dd></div><% } %>
+        <% if (project.service) { %><div><dt>Hạng mục</dt><dd><%= project.service %></dd></div><% } %>
+        <% if (project.year) { %><div><dt>Năm</dt><dd><%= project.year %></dd></div><% } %>
+      </dl>
+      <div class="project-body reveal">
+        <% if (project.summary) { %><p class="lead"><%= project.summary %></p><% } %>
+        <%- project.body %>
+        <a class="btn btn-dark" href="tel:<%= site.phoneHref %>"><%- include('../partials/icon', { name: 'phone' }) %> Tư vấn công trình tương tự</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark gallery-section" aria-label="Thư viện ảnh">
+    <div class="container">
+      <div class="section-head split">
+        <h2 class="display reveal">Hình ảnh <em>công trình</em></h2>
+        <p class="gallery-count reveal"><%= project.images.length %> ảnh · bấm để phóng to</p>
+      </div>
+      <div class="gallery" data-gallery>
+        <% project.images.forEach((img, i) => { %>
+        <a class="gallery-item reveal<%= img.width < img.height ? ' tall' : '' %>" href="<%= img.large %>" data-index="<%= i %>" style="--d:<%= (i % 3) * 70 %>ms">
+          <img src="<%= img.src %>" srcset="<%= img.srcset %>" sizes="(max-width: 768px) 100vw, 33vw" alt="<%= project.title %> — ảnh <%= i + 1 %>" width="<%= img.width %>" height="<%= img.height %>" loading="lazy" decoding="async">
+          <span class="gallery-zoom" aria-hidden="true"><%- include('../partials/icon', { name: 'expand' }) %></span>
+        </a>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <nav class="project-pager" aria-label="Dự án khác">
+    <a class="pager-link prev" href="<%= u(`/du-an/${prev.slug}/`) %>">
+      <img src="<%= prev.cover.src %>" alt="" loading="lazy">
+      <span><small><%- include('../partials/icon', { name: 'arrow-left' }) %> Dự án trước</small><%= prev.title %></span>
+    </a>
+    <a class="pager-link next" href="<%= u(`/du-an/${next.slug}/`) %>">
+      <img src="<%= next.cover.src %>" alt="" loading="lazy">
+      <span><small>Dự án tiếp theo <%- include('../partials/icon', { name: 'arrow' }) %></small><%= next.title %></span>
+    </a>
+  </nav>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-head split">
+        <h2 class="display reveal">Dự án <em>liên quan</em></h2>
+        <a class="link-arrow reveal" href="<%= u('/du-an/') %>">Tất cả dự án <%- include('../partials/icon', { name: 'arrow' }) %></a>
+      </div>
+      <div class="project-grid three">
+        <% related.forEach(p => { %><%- include('../partials/project-card', { p }) %><% }) %>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-label="Xem ảnh">
+    <button class="lb-btn lb-close" type="button" aria-label="Đóng" data-lb-close><%- include('../partials/icon', { name: 'close' }) %></button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Ảnh trước" data-lb-prev><%- include('../partials/icon', { name: 'arrow-left' }) %></button>
+    <img class="lb-img" alt="" data-lb-img>
+    <button class="lb-btn lb-next" type="button" aria-label="Ảnh tiếp" data-lb-next><%- include('../partials/icon', { name: 'arrow' }) %></button>
+    <p class="lb-count" data-lb-count></p>
+  </div>
+</main>
+<%- include('../partials/footer') %>

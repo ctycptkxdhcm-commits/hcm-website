@@ -1,0 +1,150 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header', { bodyClass: 'has-hero' }) %>
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" data-hero aria-label="Công trình tiêu biểu">
+    <div class="hero-slides">
+      <% featured.slice(0, 5).forEach((p, i) => { %>
+      <figure class="hero-slide<%= i === 0 ? ' is-active' : '' %>" data-slide>
+        <img src="<%= p.cover.hero %>" srcset="<%= p.cover.srcset %>" sizes="100vw" alt="<%= p.title %>"<%- i === 0 ? ' fetchpriority="high"' : ' loading="lazy"' %>>
+      </figure>
+      <% }) %>
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <p class="hero-rotator" aria-hidden="true">
+        <% site.heroSlogans.forEach((s, i) => { %><span class="<%= i === 0 ? 'is-active' : '' %>"><%= s %></span><% }) %>
+      </p>
+      <h1 class="hero-title">
+        <span class="line"><span>Kiến tạo</span></span>
+        <span class="line"><span>không gian sống</span></span>
+        <span class="line"><span><em>đẳng cấp</em></span></span>
+      </h1>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="<%= u('/du-an/') %>">Xem dự án <%- include('../partials/icon', { name: 'arrow' }) %></a>
+        <a class="btn btn-ghost" href="<%= u('/gioi-thieu/') %>">Về chúng tôi</a>
+      </div>
+    </div>
+    <div class="container hero-footer">
+      <% featured.slice(0, 5).forEach((p, i) => { %>
+      <a class="hero-caption<%= i === 0 ? ' is-active' : '' %>" href="<%= u(`/du-an/${p.slug}/`) %>" data-caption>
+        <span class="hero-caption-label"><%= p.categoryLabel %><% if (p.location) { %> · <%= p.location %><% } %></span>
+        <span class="hero-caption-title"><%= p.title %></span>
+      </a>
+      <% }) %>
+      <div class="hero-dots" role="tablist" aria-label="Chọn ảnh">
+        <% featured.slice(0, 5).forEach((p, i) => { %>
+        <button type="button" role="tab" aria-label="Ảnh <%= i + 1 %>: <%= p.title %>" aria-selected="<%= i === 0 %>" data-dot="<%= i %>"><span></span></button>
+        <% }) %>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#gioi-thieu" aria-label="Cuộn xuống"><span></span></a>
+  </section>
+
+  <!-- VỀ CHÚNG TÔI -->
+  <section class="section section-light" id="gioi-thieu">
+    <div class="container about-grid">
+      <div class="about-text">
+        <p class="eyebrow reveal">Về chúng tôi</p>
+        <h2 class="display reveal">Nghệ thuật của<br><em>không gian sống</em></h2>
+        <p class="lead reveal"><%= site.about %></p>
+        <a class="link-arrow reveal" href="<%= u('/gioi-thieu/') %>">Tìm hiểu thêm <%- include('../partials/icon', { name: 'arrow' }) %></a>
+        <dl class="stats reveal">
+          <div><dt>Công trình đã thiết kế</dt><dd><span data-count="<%= Math.max(projectCount, 30) %>">0</span>+</dd></div>
+          <div><dt>Lĩnh vực chuyên sâu</dt><dd><span data-count="4">0</span></dd></div>
+          <div><dt>Địa bàn chính</dt><dd class="stats-text"><%= site.region %></dd></div>
+        </dl>
+      </div>
+      <% const aboutImg = (projects[1] || projects[0]).images; %>
+      <div class="about-media reveal">
+        <img class="about-img-main" src="<%= aboutImg[0].src %>" srcset="<%= aboutImg[0].srcset %>" sizes="(max-width: 900px) 100vw, 45vw" alt="" loading="lazy">
+        <% const second = (projects[2] || projects[0]).images[0]; %>
+        <img class="about-img-sub" src="<%= second.src %>" alt="" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- DỊCH VỤ -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow reveal">Dịch vụ</p>
+        <h2 class="display reveal">Giải pháp <em>toàn diện</em></h2>
+      </div>
+      <ol class="service-list">
+        <% site.services.forEach((s, i) => { %>
+        <li class="service-row reveal">
+          <span class="service-num">0<%= i + 1 %></span>
+          <h3 class="service-title"><%= s.title %></h3>
+          <p class="service-summary"><%= s.summary %></p>
+          <a class="service-link" href="<%= u(`/dich-vu/#${s.key}`) %>" aria-label="Chi tiết: <%= s.title %>"><%- include('../partials/icon', { name: 'arrow' }) %></a>
+        </li>
+        <% }) %>
+      </ol>
+    </div>
+  </section>
+
+  <!-- TRIẾT LÝ -->
+  <section class="section section-light philosophy">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow reveal">Triết lý thiết kế</p>
+        <h2 class="display reveal">Kiến trúc <em>vượt thời gian</em></h2>
+      </div>
+      <ul class="values">
+        <% site.values.forEach((v, i) => { %>
+        <li class="reveal" style="--d:<%= i * 90 %>ms">
+          <span class="values-num">0<%= i + 1 %></span>
+          <h3><%= v.title %></h3>
+          <p><%= v.text %></p>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DỰ ÁN -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-head split">
+        <div>
+          <p class="eyebrow reveal">Dự án nổi bật</p>
+          <h2 class="display reveal">Dấu ấn <em>thẩm mỹ</em></h2>
+        </div>
+        <div class="filters reveal" role="group" aria-label="Lọc theo loại công trình" data-filters="home-grid">
+          <% categories.forEach((c, i) => { %>
+          <button type="button" class="filter<%= i === 0 ? ' is-active' : '' %>" data-filter="<%= c.key %>" aria-pressed="<%= i === 0 %>"><%= c.label %></button>
+          <% }) %>
+        </div>
+      </div>
+      <div class="project-grid" id="home-grid">
+        <% projects.slice(0, 9).forEach(p => { %><%- include('../partials/project-card', { p }) %><% }) %>
+      </div>
+      <div class="center-actions reveal">
+        <a class="btn btn-outline" href="<%= u('/du-an/') %>">Xem tất cả <%= projectCount %> dự án <%- include('../partials/icon', { name: 'arrow' }) %></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUY TRÌNH -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow reveal">Lộ trình triển khai</p>
+        <h2 class="display reveal">Quy trình <em>thiết kế &amp; thi công</em></h2>
+      </div>
+      <ol class="process">
+        <% site.process.forEach((s, i) => { %>
+        <li class="reveal" style="--d:<%= i * 110 %>ms">
+          <span class="process-num"><%= i + 1 %></span>
+          <h3><%= s.title %></h3>
+          <p><%= s.text %></p>
+        </li>
+        <% }) %>
+      </ol>
+    </div>
+  </section>
+
+</main>
+<%- include('../partials/footer') %>

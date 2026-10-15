@@ -1,0 +1,764 @@
+[
+ {
+  "slug": "biet-thu-anh-ba",
+  "title": "Biệt thự anh Bá",
+  "category": "biet-thu",
+  "style": "Hiện đại nhiệt đới",
+  "floors": "3 tầng",
+  "service": "Thiết kế kiến trúc",
+  "featured": true,
+  "order": 1,
+  "summary": "Biệt thự góc phố với mái đua sâu, lam gỗ và mảng xanh bao quanh, hài hòa khí hậu nắng gió miền Trung.",
+  "files": [
+   "A BÁ/01.jpg",
+   "A BÁ/02.jpg",
+   "A BÁ/03.jpg",
+   "A BÁ/04.jpg",
+   "A BÁ/05.jpg"
+  ]
+ },
+ {
+  "slug": "bao-tang-truong-sa",
+  "title": "Bảo tàng Trường Sa",
+  "category": "cong-cong",
+  "service": "Thiết kế kiến trúc · Nội thất · Cảnh quan",
+  "featured": true,
+  "order": 2,
+  "summary": "Công trình văn hóa mang biểu tượng sóng biển và hoa văn rỗng, không gian trưng bày nhiều tầng quanh giếng trời trung tâm.",
+  "files": [
+   "BAO TANG TRUONG SA/8.jpg",
+   "BAO TANG TRUONG SA/10.jpg",
+   "BAO TANG TRUONG SA/7.jpg",
+   "BAO TANG TRUONG SA/7B.jpg",
+   "BAO TANG TRUONG SA/LOI VAO CHINH 2.jpg",
+   "BAO TANG TRUONG SA/LOI VAO CSAU.jpg",
+   "BAO TANG TRUONG SA/6B.jpg",
+   "BAO TANG TRUONG SA/6C.jpg",
+   "BAO TANG TRUONG SA/16.jpg",
+   "BAO TANG TRUONG SA/28.jpg",
+   "BAO TANG TRUONG SA/43.jpg",
+   "BAO TANG TRUONG SA/47.jpg",
+   "BAO TANG TRUONG SA/18.jpg",
+   "BAO TANG TRUONG SA/23.jpg",
+   "BAO TANG TRUONG SA/33.jpg",
+   "BAO TANG TRUONG SA/23D.jpg",
+   "BAO TANG TRUONG SA/14.jpg"
+  ]
+ },
+ {
+  "slug": "biet-thu-hien-dai-4-tang",
+  "title": "Biệt thự hiện đại 4 tầng",
+  "category": "biet-thu",
+  "style": "Hiện đại",
+  "floors": "4 tầng",
+  "service": "Thiết kế kiến trúc",
+  "featured": true,
+  "order": 3,
+  "summary": "Khối nhà phân tầng với ban công đua và mảng xanh trên từng sàn, nổi bật khi lên đèn.",
+  "files": [
+   {
+    "f": "ACML (2).jpg",
+    "frame": true
+   },
+   {
+    "f": "ACML (1).jpg",
+    "frame": true
+   },
+   {
+    "f": "ACML-01 (3).jpg",
+    "frame": true,
+    "crop": {
+     "t": 0.13
+    }
+   },
+   {
+    "f": "ACML-01 (7).jpg",
+    "frame": true,
+    "crop": {
+     "t": 0.13
+    }
+   },
+   {
+    "f": "ACML-01 (10).jpg",
+    "frame": true,
+    "crop": {
+     "b": 0.1
+    }
+   },
+   {
+    "f": "ACML-01 (9).jpg",
+    "frame": true,
+    "crop": {
+     "b": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "slug": "nha-pho-goc-anh-hai",
+  "title": "Nhà phố góc anh Hải",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "floors": "4 tầng",
+  "service": "Thiết kế kiến trúc",
+  "featured": true,
+  "order": 5,
+  "summary": "Nhà phố hai mặt tiền với các tầng giật cấp, ban công trồng cây xanh và giàn lam mái.",
+  "files": [
+   "A HAI- HOANG VAN TAM/1.jpg",
+   "A HAI- HOANG VAN TAM/2.jpg",
+   "A HAI- HOANG VAN TAM/3.jpg",
+   "A HAI- HOANG VAN TAM/4.jpg",
+   "A HAI- HOANG VAN TAM/5.jpg",
+   "A HAI- HOANG VAN TAM/B1.jpg",
+   "A HAI- HOANG VAN TAM/B2.jpg",
+   "A HAI- HOANG VAN TAM/B3.jpg",
+   "A HAI- HOANG VAN TAM/B4.jpg"
+  ]
+ },
+ {
+  "slug": "biet-thu-goc-pho-anh-ba",
+  "title": "Biệt thự góc phố anh Bá",
+  "category": "biet-thu",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 10,
+  "files": [
+   "A BÁ 2/1.jpg",
+   "A BÁ 2/2.jpg",
+   "A BÁ 2/3.jpg",
+   "A BÁ 2/5.jpg",
+   "A BÁ 2/6.jpg",
+   "A BÁ 2/7.jpg",
+   "A BÁ 2/8.jpg",
+   "A BÁ 2/4.jpg"
+  ]
+ },
+ {
+  "slug": "biet-thu-tan-co-dien-anh-binh",
+  "title": "Biệt thự tân cổ điển anh Bình",
+  "category": "biet-thu",
+  "style": "Tân cổ điển",
+  "service": "Thiết kế kiến trúc",
+  "order": 11,
+  "dir": "A.BÌNH TL QK4"
+ },
+ {
+  "slug": "biet-thu-goc-3-tang",
+  "title": "Biệt thự góc 3 tầng",
+  "category": "biet-thu",
+  "style": "Hiện đại",
+  "floors": "3 tầng",
+  "service": "Thiết kế kiến trúc",
+  "order": 4,
+  "files": [
+   "BAT-1 (1).jpg",
+   "BAT-1 (2).jpg",
+   "BAT-1 (3).jpg",
+   "BAT-1 (4).jpg",
+   "BAT-1 (5).jpg"
+  ],
+  "featured": true,
+  "summary": "Biệt thự góc với mái đua lớn, ban công xếp tầng phủ cây xanh, mở tầm nhìn ra hai mặt đường."
+ },
+ {
+  "slug": "biet-thu-lien-ke-xuan-an",
+  "title": "Biệt thự liền kề Xuân An",
+  "category": "biet-thu",
+  "style": "Hiện đại",
+  "floors": "3 tầng",
+  "service": "Thiết kế kiến trúc",
+  "order": 13,
+  "files": [
+   "BT XUÂN AN/5_5.jpg",
+   "BT XUÂN AN/5_Camera_2.jpg",
+   "BT XUÂN AN/5_Camera_3.jpg",
+   "BT XUÂN AN/5_Camera_4.jpg",
+   "BT XUÂN AN/5_Camera_5.jpg",
+   "BT XUÂN AN/4_Camera_2.jpg",
+   "BT XUÂN AN/4_Camera_3-hk.jpg",
+   "BT XUÂN AN/4_Camera_4.jpg",
+   "BT XUÂN AN/4_Camera_5.jpg"
+  ]
+ },
+ {
+  "slug": "biet-thu-goc-pho-hien-dai",
+  "title": "Biệt thự góc phố hiện đại",
+  "category": "biet-thu",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 14,
+  "files": [
+   "ADQK-2.png",
+   "ADQK-3.png",
+   "ADQK-1.png"
+  ]
+ },
+ {
+  "slug": "biet-thu-ab-house",
+  "title": "Biệt thự AB House",
+  "category": "biet-thu",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 15,
+  "files": [
+   "ABSXD (1).jpg"
+  ]
+ },
+ {
+  "slug": "biet-thu-mat-tien-cong",
+  "title": "Biệt thự mặt tiền cong",
+  "category": "biet-thu",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 16,
+  "files": [
+   "AHCL (2).jpg",
+   "AHCL (1).jpg"
+  ]
+ },
+ {
+  "slug": "biet-thu-pho-3-tang",
+  "title": "Biệt thự phố 3 tầng",
+  "category": "biet-thu",
+  "style": "Hiện đại",
+  "floors": "3 tầng",
+  "service": "Thiết kế kiến trúc",
+  "order": 17,
+  "files": [
+   "AT-2.jpg",
+   "AT-1.jpg"
+  ]
+ },
+ {
+  "slug": "biet-thu-nha-vuon",
+  "title": "Biệt thự nhà vườn",
+  "category": "biet-thu",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 18,
+  "files": [
+   "MH-1.jpg"
+  ]
+ },
+ {
+  "slug": "biet-thu-mai-doc",
+  "title": "Biệt thự mái dốc",
+  "category": "biet-thu",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 19,
+  "files": [
+   "HK-1.jpg"
+  ]
+ },
+ {
+  "slug": "nha-pho-ket-hop-cafe-anh-cuong",
+  "title": "Nhà phố kết hợp café anh Cường",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc · Nội thất",
+  "order": 20,
+  "summary": "Tầng trệt mở làm quán café sân vườn, các tầng trên là không gian ở riêng tư.",
+  "files": [
+   "A CUONG/PA-1_Camera_1.png",
+   "A CUONG/PA-1_Camera_2.png",
+   "A CUONG/PA-1_Camera_4.png",
+   "A CUONG/PA-1_Camera_5.png",
+   "A CUONG/PA-1_Camera_6.png",
+   "A CUONG/PA-1_Camera_7.png",
+   "A CUONG/PA-1_8.png",
+   "A CUONG/PA-1_9.png",
+   "A CUONG/PA-1_10.png",
+   "A CUONG/PA-1_11.png"
+  ]
+ },
+ {
+  "slug": "nha-pho-anh-ha",
+  "title": "Nhà phố anh Hạ",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "floors": "2 tầng",
+  "service": "Thiết kế kiến trúc · Nội thất",
+  "order": 21,
+  "files": [
+   "A HẠ/2.jpg",
+   "A HẠ/1.jpg",
+   "A HẠ/3.jpg",
+   "A HẠ/4.jpg",
+   "A HẠ/5.jpg",
+   "A HẠ/6.jpg",
+   "A HẠ/7.jpg",
+   "A HẠ/8.jpg",
+   "A HẠ/9.jpg",
+   "A HẠ/11.jpg"
+  ]
+ },
+ {
+  "slug": "nha-pho-ket-hop-spa-mai-loan",
+  "title": "Nhà phố kết hợp spa Mai Loan",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 22,
+  "files": [
+   "MAI LOAN/1.png",
+   "MAI LOAN/1_4.png",
+   "MAI LOAN/1_3.png",
+   "MAI LOAN/1_5.png",
+   "MAI LOAN/1_6_Camera_1.png"
+  ]
+ },
+ {
+  "slug": "nha-pho-anh-linh",
+  "title": "Nhà phố anh Linh",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "floors": "3 tầng",
+  "service": "Thiết kế kiến trúc",
+  "order": 23,
+  "files": [
+   "A LINH/pa-3.jpg",
+   "A LINH/pa-3_2.jpg",
+   "A LINH/pa-3_3.jpg"
+  ]
+ },
+ {
+  "slug": "nha-pho-anh-phuc",
+  "title": "Nhà phố anh Phúc",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 24,
+  "dir": "A PHUC"
+ },
+ {
+  "slug": "nha-o-anh-tung-cua-lo",
+  "title": "Nhà ở anh Tùng",
+  "category": "nha-pho",
+  "location": "TX. Cửa Lò, Nghệ An",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 25,
+  "files": [
+   "A TUNG CUA LO.png"
+  ]
+ },
+ {
+  "slug": "nha-pho-ket-hop-kinh-doanh",
+  "title": "Nhà phố kết hợp kinh doanh",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 26,
+  "files": [
+   "CDC (1).jpg",
+   "CDC (2).jpg",
+   "CDC (3).jpg"
+  ]
+ },
+ {
+  "slug": "nha-pho-mat-tien-rong",
+  "title": "Nhà phố mặt tiền rộng",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "floors": "3 tầng",
+  "service": "Thiết kế kiến trúc",
+  "order": 27,
+  "files": [
+   "CHANH (1).jpg",
+   "CHANH (2).jpg",
+   "CHANH (3).jpg"
+  ]
+ },
+ {
+  "slug": "nha-pho-xanh",
+  "title": "Nhà phố xanh",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 28,
+  "files": [
+   "CA-1.png",
+   "CA-2.png"
+  ]
+ },
+ {
+  "slug": "nha-pho-san-vuon",
+  "title": "Nhà phố sân vườn",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 29,
+  "files": [
+   {
+    "f": "DC1-1.jpg",
+    "frame": true,
+    "crop": {
+     "b": 0.14
+    }
+   },
+   {
+    "f": "DC1-2.jpg",
+    "frame": true,
+    "crop": {
+     "b": 0.14
+    }
+   }
+  ]
+ },
+ {
+  "slug": "cum-nha-pho-lien-ke",
+  "title": "Cụm nhà phố liền kề",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 30,
+  "files": [
+   "QH (1).jpg",
+   {
+    "f": "QH (2).jpg",
+    "crop": {
+     "b": 0.16
+    }
+   }
+  ]
+ },
+ {
+  "slug": "nha-pho-lam-go",
+  "title": "Nhà phố lam gỗ",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "service": "Thiết kế kiến trúc",
+  "order": 31,
+  "files": [
+   {
+    "f": "DAP-1.jpg",
+    "frame": true
+   }
+  ]
+ },
+ {
+  "slug": "nha-pho-3-tang-hien-dai",
+  "title": "Nhà phố 3 tầng hiện đại",
+  "category": "nha-pho",
+  "style": "Hiện đại",
+  "floors": "3 tầng",
+  "service": "Thiết kế kiến trúc",
+  "order": 32,
+  "files": [
+   "HH (2).jpg"
+  ]
+ },
+ {
+  "slug": "chung-cu-mini-hung-dung",
+  "title": "Chung cư mini Hưng Dũng",
+  "category": "can-ho",
+  "location": "TP. Vinh, Nghệ An",
+  "service": "Thiết kế kiến trúc",
+  "order": 40,
+  "files": [
+   "CC MINI HƯNG DŨNG/A.jpg",
+   "CC MINI HƯNG DŨNG/A_2.jpg",
+   "CC MINI HƯNG DŨNG/A_4.jpg",
+   "CC MINI HƯNG DŨNG/A_5.jpg",
+   "CC MINI HƯNG DŨNG/A_6.jpg"
+  ]
+ },
+ {
+  "slug": "nha-cho-thue-anh-nam",
+  "title": "Nhà cho thuê anh Nam",
+  "category": "can-ho",
+  "service": "Thiết kế kiến trúc",
+  "order": 41,
+  "files": [
+   "NHÀ TRỌ A NAM/3_3.jpg",
+   "NHÀ TRỌ A NAM/3_2.jpg",
+   "NHÀ TRỌ A NAM/3.jpg",
+   "NHÀ TRỌ A NAM/pa-1.jpg",
+   "NHÀ TRỌ A NAM/pa-1_2.jpg",
+   "NHÀ TRỌ A NAM/pa-1_4.jpg",
+   "NHÀ TRỌ A NAM/pa2.png",
+   "NHÀ TRỌ A NAM/pa2_2.png"
+  ]
+ },
+ {
+  "slug": "to-hop-chung-cu-cao-tang",
+  "title": "Tổ hợp chung cư cao tầng",
+  "category": "can-ho",
+  "service": "Thiết kế kiến trúc",
+  "order": 42,
+  "files": [
+   "CCH-1.jpg",
+   "CCH-2.jpg"
+  ]
+ },
+ {
+  "slug": "nha-thuoc-toan-nhung",
+  "title": "Nhà thuốc Toàn Nhung",
+  "category": "van-phong",
+  "service": "Thiết kế kiến trúc · Nhận diện mặt tiền",
+  "order": 50,
+  "files": [
+   "NT TOAN NHUNG/A.jpg",
+   "NT TOAN NHUNG/B.jpg",
+   "NT TOAN NHUNG/3.jpg",
+   "NT TOAN NHUNG/D.jpg",
+   "NT TOAN NHUNG/E.jpg",
+   "NT TOAN NHUNG/C.jpg",
+   "NT TOAN NHUNG/1.jpg",
+   "NT TOAN NHUNG/2.jpg"
+  ]
+ },
+ {
+  "slug": "van-phong-7-tang",
+  "title": "Văn phòng 7 tầng",
+  "category": "van-phong",
+  "floors": "7 tầng",
+  "service": "Thiết kế kiến trúc",
+  "order": 51,
+  "files": [
+   "VP7T (1).jpg",
+   "VP7T (2).jpg",
+   "VP7T (3).jpg"
+  ]
+ },
+ {
+  "slug": "toa-van-phong-goc-pho",
+  "title": "Tòa văn phòng góc phố",
+  "category": "van-phong",
+  "service": "Thiết kế kiến trúc",
+  "order": 52,
+  "files": [
+   {
+    "f": "VPDT (1).jpg",
+    "crop": {
+     "b": 0.1
+    }
+   },
+   {
+    "f": "VPDT (2).jpg",
+    "crop": {
+     "b": 0.1
+    }
+   }
+  ]
+ },
+ {
+  "slug": "nha-pho-van-phong-nss",
+  "title": "Nhà phố văn phòng NSS",
+  "category": "van-phong",
+  "service": "Thiết kế kiến trúc",
+  "order": 53,
+  "files": [
+   "VP-NSS2.jpg",
+   "VP-NSS3.jpg"
+  ]
+ },
+ {
+  "slug": "van-phong-mat-dung-lam",
+  "title": "Văn phòng mặt dựng lam",
+  "category": "van-phong",
+  "service": "Thiết kế kiến trúc",
+  "order": 54,
+  "files": [
+   "VPT-1.jpg"
+  ]
+ },
+ {
+  "slug": "tram-dung-nghi",
+  "title": "Trạm dừng nghỉ và dịch vụ",
+  "category": "khach-san",
+  "service": "Thiết kế kiến trúc",
+  "order": 60,
+  "files": [
+   "NDH-1.jpg",
+   "NDH-2.jpg",
+   "NDH-3.png",
+   "NDH-4.png",
+   "NDH-5.png"
+  ]
+ },
+ {
+  "slug": "khach-san-9-tang",
+  "title": "Khách sạn 9 tầng",
+  "category": "khach-san",
+  "floors": "9 tầng",
+  "service": "Thiết kế kiến trúc",
+  "order": 61,
+  "files": [
+   "KS-9T (1).jpg",
+   "KS-9T (2).jpg"
+  ]
+ },
+ {
+  "slug": "khach-san-27-tang",
+  "title": "Khách sạn 27 tầng",
+  "category": "khach-san",
+  "floors": "27 tầng",
+  "service": "Thiết kế kiến trúc",
+  "order": 62,
+  "files": [
+   "KS27T-1.jpg"
+  ]
+ },
+ {
+  "slug": "khach-san-23-tang",
+  "title": "Khách sạn 23 tầng",
+  "category": "khach-san",
+  "floors": "23 tầng",
+  "service": "Thiết kế kiến trúc (phác thảo)",
+  "order": 63,
+  "files": [
+   "KS23T.jpg"
+  ]
+ },
+ {
+  "slug": "nha-da-nang-truong-ly-nhat-quang",
+  "title": "Nhà đa năng Trường Lý Nhật Quang",
+  "category": "cong-cong",
+  "service": "Thiết kế kiến trúc · Nội thất",
+  "order": 70,
+  "files": [
+   {
+    "f": "NTD-TRƯỜNG LÝ NHẬT QUANG/04.jpg",
+    "frame": true
+   },
+   {
+    "f": "NTD-TRƯỜNG LÝ NHẬT QUANG/02.jpg",
+    "frame": true
+   },
+   {
+    "f": "NTD-TRƯỜNG LÝ NHẬT QUANG/03.jpg",
+    "frame": true
+   },
+   {
+    "f": "NTD-TRƯỜNG LÝ NHẬT QUANG/05.jpg",
+    "frame": true
+   },
+   {
+    "f": "NTD-TRƯỜNG LÝ NHẬT QUANG/06.jpg",
+    "frame": true
+   },
+   {
+    "f": "NTD-TRƯỜNG LÝ NHẬT QUANG/07.jpg",
+    "frame": true
+   },
+   {
+    "f": "NTD-TRƯỜNG LÝ NHẬT QUANG/08.jpg",
+    "frame": true
+   },
+   {
+    "f": "NTD-TRƯỜNG LÝ NHẬT QUANG/10.jpg",
+    "frame": true
+   },
+   {
+    "f": "NTD-TRƯỜNG LÝ NHẬT QUANG/11'.jpg",
+    "frame": true
+   },
+   {
+    "f": "NTD-TRƯỜNG LÝ NHẬT QUANG/12.jpg",
+    "frame": true
+   }
+  ]
+ },
+ {
+  "slug": "tru-so-lam-viec",
+  "title": "Trụ sở làm việc",
+  "category": "cong-cong",
+  "service": "Thiết kế kiến trúc · Quy hoạch",
+  "order": 71,
+  "files": [
+   "pa1-6.jpg",
+   "pa1-3.jpg",
+   "pa1-4.jpg",
+   "pa1-1.jpg",
+   "pa1-5.jpg",
+   "pa1-7.jpg",
+   "pa-0.jpg",
+   "pa1-2.jpg"
+  ]
+ },
+ {
+  "slug": "quy-hoach-doanh-trai-don-quan-su",
+  "title": "Quy hoạch doanh trại đồn quân sự",
+  "category": "quoc-phong",
+  "service": "Quy hoạch · Thiết kế kiến trúc",
+  "order": 80,
+  "files": [
+   "QH- ĐỒN QUÂN SỰ/K-CONG CHINH.png",
+   "QH- ĐỒN QUÂN SỰ/K-CONG CHINH_2.png",
+   "QH- ĐỒN QUÂN SỰ/K-CONG CHINH_3.png",
+   "QH- ĐỒN QUÂN SỰ/TT-A.jpg",
+   "QH- ĐỒN QUÂN SỰ/TT-B.png",
+   "QH- ĐỒN QUÂN SỰ/A-S1.png",
+   "QH- ĐỒN QUÂN SỰ/A-S1_2.png",
+   "QH- ĐỒN QUÂN SỰ/A-S2.png",
+   "QH- ĐỒN QUÂN SỰ/A-S2_2.png",
+   "QH- ĐỒN QUÂN SỰ/A-S3.png",
+   "QH- ĐỒN QUÂN SỰ/B-S4.png",
+   "QH- ĐỒN QUÂN SỰ/B-S8.png",
+   "QH- ĐỒN QUÂN SỰ/C-S10.png",
+   "QH- ĐỒN QUÂN SỰ/C-S10_2.png",
+   "QH- ĐỒN QUÂN SỰ/F-CONG.png",
+   "QH- ĐỒN QUÂN SỰ/F-P6-9-10-11_3.png",
+   "QH- ĐỒN QUÂN SỰ/F-P6-9-10-11_4.png"
+  ]
+ },
+ {
+  "slug": "doanh-trai-lu-doan-283",
+  "title": "Doanh trại Lữ đoàn 283",
+  "category": "quoc-phong",
+  "service": "Quy hoạch · Thiết kế kiến trúc",
+  "order": 81,
+  "dir": "PA-LỮ ĐOÀN 283",
+  "limit": 12
+ },
+ {
+  "slug": "ban-chqs-ky-son",
+  "title": "Ban Chỉ huy Quân sự huyện Kỳ Sơn",
+  "category": "quoc-phong",
+  "location": "Kỳ Sơn, Nghệ An",
+  "service": "Quy hoạch · Thiết kế kiến trúc",
+  "order": 82,
+  "dir": "BCHQS-KY SON",
+  "limit": 12
+ },
+ {
+  "slug": "ban-chqs-ky-anh",
+  "title": "Ban Chỉ huy Quân sự Kỳ Anh",
+  "category": "quoc-phong",
+  "location": "Kỳ Anh, Hà Tĩnh",
+  "service": "Quy hoạch · Thiết kế kiến trúc",
+  "order": 83,
+  "dir": "BCHQS-KYANH",
+  "limit": 12
+ },
+ {
+  "slug": "cong-bo-chi-huy-bdbp-nghe-an",
+  "title": "Cổng Bộ Chỉ huy BĐBP tỉnh Nghệ An",
+  "category": "quoc-phong",
+  "location": "Nghệ An",
+  "service": "Thiết kế kiến trúc · Cải tạo",
+  "order": 84,
+  "files": [
+   "CỔNG BĐBP NA/pa-2_7.png",
+   "CỔNG BĐBP NA/pa-2.jpg",
+   "CỔNG BĐBP NA/pa-2_2.jpg",
+   "CỔNG BĐBP NA/pa-2_3.jpg",
+   "CỔNG BĐBP NA/pa-2_4.jpg",
+   "CỔNG BĐBP NA/pa-2_5.png",
+   "CỔNG BĐBP NA/pa-2_6.png",
+   "CỔNG BĐBP NA/pa-2_8.png"
+  ]
+ },
+ {
+  "slug": "truong-ban",
+  "title": "Trường bắn",
+  "category": "quoc-phong",
+  "service": "Quy hoạch · Thiết kế kiến trúc",
+  "order": 85,
+  "dir": "TRƯỜNG BẮN",
+  "limit": 12
+ }
+]

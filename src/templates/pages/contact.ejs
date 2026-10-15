@@ -1,0 +1,29 @@
+<%- include('../partials/head', { description: `Liên hệ ${site.legalName} — tư vấn thiết kế kiến trúc, nội thất và xây dựng tại ${site.region}. Hotline ${site.phone}.` }) %>
+<%- include('../partials/header') %>
+<main id="main">
+  <section class="section section-light contact-section">
+    <div class="container contact-grid">
+      <div>
+        <p class="eyebrow reveal">Liên hệ</p>
+        <h1 class="display reveal">Hãy kể cho chúng tôi<br>về <em>ngôi nhà mơ ước</em></h1>
+        <p class="lead reveal">Gọi điện hoặc ghé văn phòng để được kiến trúc sư tư vấn miễn phí về phương án thiết kế, phong cách và chi phí.</p>
+        <div class="contact-actions reveal">
+          <a class="btn btn-dark" href="tel:<%= site.phoneHref %>"><%- include('../partials/icon', { name: 'phone' }) %> Gọi <%= site.phone %></a>
+          <% if (site.social.zalo) { %><a class="btn btn-outline-dark" href="<%= site.social.zalo %>" target="_blank" rel="noopener"><%- include('../partials/icon', { name: 'zalo' }) %> Nhắn Zalo</a><% } %>
+        </div>
+      </div>
+      <ul class="contact-cards">
+        <li class="reveal"><%- include('../partials/icon', { name: 'pin' }) %><div><h2>Văn phòng</h2><p><%= site.address %></p></div></li>
+        <li class="reveal"><%- include('../partials/icon', { name: 'phone' }) %><div><h2>Hotline</h2><p><a href="tel:<%= site.phoneHref %>"><%= site.phone %></a></p></div></li>
+        <li class="reveal"><%- include('../partials/icon', { name: 'mail' }) %><div><h2>Email</h2><p><a href="mailto:<%= site.email %>"><%= site.email %></a></p></div></li>
+        <li class="reveal"><%- include('../partials/icon', { name: 'clock' }) %><div><h2>Giờ làm việc</h2><p><%= site.hours %></p></div></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="map reveal">
+        <iframe title="Bản đồ văn phòng <%= site.legalName %>" src="https://www.google.com/maps?q=<%= encodeURIComponent(site.mapQuery) %>&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include('../partials/footer') %>

@@ -1,0 +1,44 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cta reveal">
+      <p class="eyebrow">Bắt đầu công trình của bạn</p>
+      <h2 class="display">Cùng HCM kiến tạo<br><em>không gian sống</em> của bạn</h2>
+      <div class="footer-cta-actions">
+        <a class="btn btn-light" href="tel:<%= site.phoneHref %>"><%- include('icon', { name: 'phone' }) %> Gọi <%= site.phone %></a>
+        <a class="btn btn-outline" href="<%= u('/lien-he/') %>">Thông tin liên hệ <%- include('icon', { name: 'arrow' }) %></a>
+      </div>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="<%= u('/images/logo-light.png') %>" alt="<%= site.legalName %>" width="290" height="148" loading="lazy">
+      </div>
+      <div>
+        <h3 class="footer-title">Liên hệ</h3>
+        <ul class="footer-list">
+          <li><%- include('icon', { name: 'pin' }) %><span><%= site.address %></span></li>
+          <li><%- include('icon', { name: 'phone' }) %><a href="tel:<%= site.phoneHref %>"><%= site.phone %></a></li>
+          <li><%- include('icon', { name: 'mail' }) %><a href="mailto:<%= site.email %>"><%= site.email %></a></li>
+          <li><%- include('icon', { name: 'clock' }) %><span><%= site.hours %></span></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-title">Danh mục</h3>
+        <ul class="footer-list footer-links">
+          <% site.nav.slice(1).forEach(item => { %><li><a href="<%= u(item.href) %>"><%= item.label %></a></li><% }) %>
+        </ul>
+        <% const socials = Object.entries(site.social).filter(([, v]) => v); if (socials.length) { %>
+        <ul class="social">
+          <% socials.forEach(([k, v]) => { %><li><a href="<%= v %>" target="_blank" rel="noopener" aria-label="<%= k %>"><%- include('icon', { name: k }) %></a></li><% }) %>
+        </ul>
+        <% } %>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <%= year %> <%= site.legalName %>.</p>
+      <p>Kiến trúc · Nội thất · Cảnh quan · Xây dựng trọn gói</p>
+    </div>
+  </div>
+</footer>
+<script src="<%= u('/assets/main.js') %>?v=<%= version %>" defer></script>
+</body>
+</html>

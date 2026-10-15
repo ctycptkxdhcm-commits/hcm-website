@@ -1,0 +1,10 @@
+<section class="page-hero">
+  <% if (typeof image !== 'undefined' && image) { %>
+  <img class="page-hero-bg" src="<%= image %>" alt="" aria-hidden="true">
+  <% } %>
+  <div class="container">
+    <p class="eyebrow reveal"><%= eyebrow %></p>
+    <h1 class="display page-hero-title reveal"><%- heading %></h1>
+    <% if (typeof lead !== 'undefined') { %><p class="page-hero-lead reveal"><%= lead %></p><% } %>
+  </div>
+</section>

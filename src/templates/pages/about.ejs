@@ -1,0 +1,63 @@
+<%- include('../partials/head', { description: `Giới thiệu ${site.legalName}: thiết kế kiến trúc, nội thất, cảnh quan và xây dựng trọn gói tại ${site.region}.` }) %>
+<%- include('../partials/header', { bodyClass: 'has-hero' }) %>
+<main id="main">
+  <%- include('../partials/page-hero', { eyebrow: 'Giới thiệu', heading: 'Về <em>HCM</em>', lead: site.legalName, image: projects[0] && projects[0].cover.hero }) %>
+
+  <section class="section section-light">
+    <div class="container about-grid">
+      <div class="about-text">
+        <p class="eyebrow reveal">Câu chuyện của chúng tôi</p>
+        <h2 class="display reveal">Lắng nghe trước,<br><em>thiết kế sau</em></h2>
+        <p class="lead reveal"><%= site.about %></p>
+        <p class="reveal">Với đội ngũ kiến trúc sư, kỹ sư và thợ lành nghề tại <%= site.region %>, HCM cung cấp giải pháp trọn vẹn: thiết kế kiến trúc, nội thất, cảnh quan và thi công xây dựng — một đầu mối duy nhất, trách nhiệm xuyên suốt từ bản vẽ đến công trình hoàn thiện.</p>
+        <dl class="stats reveal">
+          <div><dt>Công trình đã thiết kế</dt><dd><span data-count="<%= Math.max(projectCount, 30) %>">0</span>+</dd></div>
+          <div><dt>Lĩnh vực chuyên sâu</dt><dd><span data-count="4">0</span></dd></div>
+          <div><dt>Địa bàn chính</dt><dd class="stats-text"><%= site.region %></dd></div>
+        </dl>
+      </div>
+      <% const imgs = (projects[3] || projects[0]).images; %>
+      <div class="about-media reveal">
+        <img class="about-img-main" src="<%= imgs[0].src %>" srcset="<%= imgs[0].srcset %>" sizes="(max-width: 900px) 100vw, 45vw" alt="" loading="lazy">
+        <img class="about-img-sub" src="<%= (imgs[1] || imgs[0]).src %>" alt="" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark philosophy">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow reveal">Giá trị cốt lõi</p>
+        <h2 class="display reveal">Điều chúng tôi <em>theo đuổi</em></h2>
+      </div>
+      <ul class="values">
+        <% site.values.forEach((v, i) => { %>
+        <li class="reveal" style="--d:<%= i * 90 %>ms">
+          <span class="values-num">0<%= i + 1 %></span>
+          <h3><%= v.title %></h3>
+          <p><%= v.text %></p>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow reveal">Cách chúng tôi làm việc</p>
+        <h2 class="display reveal">Quy trình <em>4 bước</em></h2>
+      </div>
+      <ol class="process">
+        <% site.process.forEach((s, i) => { %>
+        <li class="reveal" style="--d:<%= i * 110 %>ms">
+          <span class="process-num"><%= i + 1 %></span>
+          <h3><%= s.title %></h3>
+          <p><%= s.text %></p>
+        </li>
+        <% }) %>
+      </ol>
+    </div>
+  </section>
+</main>
+<%- include('../partials/footer') %>

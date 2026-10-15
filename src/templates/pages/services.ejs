@@ -1,0 +1,25 @@
+<%- include('../partials/head', { description: 'Dịch vụ thiết kế kiến trúc, thiết kế nội thất, thiết kế cảnh quan và xây dựng trọn gói tại ' + site.region + '.' }) %>
+<%- include('../partials/header', { bodyClass: 'has-hero' }) %>
+<main id="main">
+  <%- include('../partials/page-hero', { eyebrow: 'Dịch vụ', heading: 'Giải pháp <em>toàn diện</em>', lead: 'Từ ý tưởng đến công trình hoàn thiện — một đầu mối duy nhất.', image: projects[1] && projects[1].cover.hero }) %>
+
+  <% site.services.forEach((s, i) => { const p = projects[i % Math.max(projects.length, 1)]; %>
+  <section class="section <%= i % 2 ? 'section-dark' : 'section-light' %>" id="<%= s.key %>">
+    <div class="container service-detail<%= i % 2 ? ' reverse' : '' %>">
+      <div class="service-detail-media reveal">
+        <% if (p) { %><img src="<%= p.images[Math.min(i, p.images.length - 1)].src %>" srcset="<%= p.images[Math.min(i, p.images.length - 1)].srcset %>" sizes="(max-width: 900px) 100vw, 50vw" alt="<%= s.title %> — <%= p.title %>" loading="lazy"><% } %>
+      </div>
+      <div class="service-detail-text">
+        <span class="service-num reveal">0<%= i + 1 %></span>
+        <h2 class="display reveal"><%= s.title %></h2>
+        <p class="lead reveal"><%= s.summary %></p>
+        <ul class="check-list reveal">
+          <% s.items.forEach(item => { %><li><%= item %></li><% }) %>
+        </ul>
+        <a class="link-arrow reveal" href="<%= u('/du-an/') %>">Xem công trình đã thực hiện <%- include('../partials/icon', { name: 'arrow' }) %></a>
+      </div>
+    </div>
+  </section>
+  <% }) %>
+</main>
+<%- include('../partials/footer') %>

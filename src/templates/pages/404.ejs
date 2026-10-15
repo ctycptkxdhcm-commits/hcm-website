@@ -1,0 +1,16 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<main id="main">
+  <section class="section section-light notfound">
+    <div class="container">
+      <p class="eyebrow">Lỗi 404</p>
+      <h1 class="display">Không tìm thấy <em>trang này</em></h1>
+      <p class="lead">Trang bạn tìm có thể đã được đổi địa chỉ hoặc không còn tồn tại.</p>
+      <div class="contact-actions">
+        <a class="btn btn-dark" href="<%= u('/') %>">Về trang chủ</a>
+        <a class="btn btn-outline-dark" href="<%= u('/du-an/') %>">Xem dự án</a>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include('../partials/footer') %>
