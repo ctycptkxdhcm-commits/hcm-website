@@ -16,7 +16,7 @@
         <h3 class="footer-title">Liên hệ</h3>
         <ul class="footer-list">
           <li><%- include('icon', { name: 'pin' }) %><span><%= site.address %></span></li>
-          <li><%- include('icon', { name: 'phone' }) %><a href="tel:<%= site.phoneHref %>"><%= site.phone %></a></li>
+          <li><%- include('icon', { name: 'phone' }) %><span><a href="tel:<%= site.phoneHref %>"><%= site.phone %></a><% if (site.phone2) { %> · <a href="tel:<%= site.phone2Href %>"><%= site.phone2 %></a><% } %></span></li>
           <li><%- include('icon', { name: 'mail' }) %><a href="mailto:<%= site.email %>"><%= site.email %></a></li>
           <li><%- include('icon', { name: 'clock' }) %><span><%= site.hours %></span></li>
         </ul>

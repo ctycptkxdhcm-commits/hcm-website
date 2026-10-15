@@ -7,11 +7,13 @@ export const site = {
   description:
     'Công ty CP Tư vấn Thiết kế và Xây dựng HCM — thiết kế kiến trúc, nội thất, cảnh quan và xây dựng trọn gói nhà phố, biệt thự, chung cư, văn phòng, khách sạn, công trình công cộng và quốc phòng tại Nghệ An.',
   // Địa chỉ website khi đã có tên miền, ví dụ 'https://hcmdesign.vn'
-  url: process.env.SITE_URL || 'https://example.github.io',
+  url: process.env.SITE_URL || 'https://ctycptkxdhcm-commits.github.io/hcm-website',
   region: 'Nghệ An',
-  phone: '0900 000 000', // [CẦN BỔ SUNG]
-  phoneHref: '+84900000000', // [CẦN BỔ SUNG]
-  email: 'lienhe@hcm.vn', // [CẦN BỔ SUNG]
+  phone: '0902 090 567',
+  phoneHref: '+84902090567',
+  phone2: '0824 331 989', // số thứ hai — để trống sẽ ẩn
+  phone2Href: '+84824331989',
+  email: 'ctycptkxdhcm@gmail.com',
   address: 'TP. Vinh, Nghệ An', // [CẦN BỔ SUNG] địa chỉ văn phòng đầy đủ
   hours: 'Thứ 2 – Thứ 7: 7:30 – 17:30',
   mapQuery: 'Vinh, Nghe An', // [CẦN BỔ SUNG] tên/địa chỉ trên Google Maps

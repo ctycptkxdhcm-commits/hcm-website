@@ -12,6 +12,7 @@
         <% }) %>
       </ul>
       <a class="nav-phone" href="tel:<%= site.phoneHref %>"><%- include('icon', { name: 'phone' }) %> <%= site.phone %></a>
+      <% if (site.phone2) { %><a class="nav-phone" href="tel:<%= site.phone2Href %>"><%- include('icon', { name: 'phone' }) %> <%= site.phone2 %></a><% } %>
     </nav>
     <a class="btn btn-outline header-cta" href="tel:<%= site.phoneHref %>"><%- include('icon', { name: 'phone' }) %><span><%= site.phone %></span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Mở menu" data-menu-toggle>

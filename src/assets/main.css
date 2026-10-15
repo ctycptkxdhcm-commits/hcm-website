@@ -158,8 +158,11 @@ p { margin: 0 0 1.1em; }
   .main-nav.is-open li:nth-child(3) { transition-delay: 0.1s; }
   .main-nav.is-open li:nth-child(4) { transition-delay: 0.15s; }
   .main-nav.is-open li:nth-child(5) { transition-delay: 0.2s; }
+  .nav-phone + .nav-phone { margin-top: -32px; }
   .nav-phone { display: inline-flex !important; align-items: center; gap: 12px; min-height: 44px; color: var(--brass); letter-spacing: 0.1em; }
   body.menu-open { overflow: hidden; }
+  /* backdrop-filter tạo containing block → menu fixed bị giới hạn trong header; tắt khi menu mở */
+  body.menu-open .site-header { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--ink); }
 }
 
 /* ---------- Hero (trang chủ) ---------- */
@@ -467,7 +470,7 @@ p { margin: 0 0 1.1em; }
 .js .about-media.reveal.is-visible img, .js .service-detail-media.reveal.is-visible img { clip-path: inset(0); }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; scroll-behavior: auto !important; }
   .js .reveal { opacity: 1; transform: none; }
   .js .about-media.reveal img, .js .service-detail-media.reveal img { clip-path: none; }
   .hero-slide img, .hero-slide.is-active img { transform: none; }
