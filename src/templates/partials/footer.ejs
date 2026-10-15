@@ -28,7 +28,7 @@
         </ul>
         <% const socials = Object.entries(site.social).filter(([, v]) => v); if (socials.length) { %>
         <ul class="social">
-          <% socials.forEach(([k, v]) => { %><li><a href="<%= v %>" target="_blank" rel="noopener" aria-label="<%= k %>"><%- include('icon', { name: k }) %></a></li><% }) %>
+          <% socials.forEach(([k, v]) => { %><li><a href="<%= v %>" target="_blank" rel="noopener" aria-label="<%= { facebook: 'Facebook', zalo: 'Zalo', youtube: 'YouTube', tiktok: 'TikTok' }[k] || k %>"><%- include('icon', { name: k }) %></a></li><% }) %>
         </ul>
         <% } %>
       </div>

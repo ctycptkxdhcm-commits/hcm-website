@@ -14,12 +14,12 @@ export const site = {
   phone2: '0824 331 989', // số thứ hai — để trống sẽ ẩn
   phone2Href: '+84824331989',
   email: 'ctycptkxdhcm@gmail.com',
-  address: 'TP. Vinh, Nghệ An', // [CẦN BỔ SUNG] địa chỉ văn phòng đầy đủ
+  address: 'Số 09, đường Yên Bình, phường Trường Vinh, tỉnh Nghệ An',
   hours: 'Thứ 2 – Thứ 7: 7:30 – 17:30',
-  mapQuery: 'Vinh, Nghe An', // [CẦN BỔ SUNG] tên/địa chỉ trên Google Maps
+  mapQuery: 'Số 9 Yên Bình, Trường Vinh, Nghệ An', // địa chỉ tìm trên Google Maps (bản đồ trang Liên hệ)
   social: {
     facebook: '', // [CẦN BỔ SUNG] link fanpage, để trống sẽ ẩn
-    zalo: '', // ví dụ 'https://zalo.me/0900000000'
+    zalo: 'https://zalo.me/0902090567',
     youtube: '',
     tiktok: ''
   },
