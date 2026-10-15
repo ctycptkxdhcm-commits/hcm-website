@@ -1,0 +1,42 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<%- include('../partials/page-hero', {
+  image: service.image,
+  eyebrow: 'Dịch vụ',
+  heading: service.title,
+  lead: service.summary,
+  crumbs: [{ href: '/dich-vu', label: 'Dịch vụ' }, { label: service.title }]
+}) %>
+
+<section class="section">
+  <div class="container detail-layout">
+    <div class="prose reveal">
+      <h2>Tổng quan</h2>
+      <% service.body.forEach(p => { %><p><%= p %></p><% }) %>
+      <h2>Phạm vi công việc</h2>
+      <ul class="checklist checklist-2">
+        <% service.features.forEach(f => { %><li><%- include('../partials/icon', { name: 'check', size: 18 }) %> <%= f %></li><% }) %>
+      </ul>
+      <h2>Vì sao chọn HCM?</h2>
+      <p>Với hơn <%= new Date().getFullYear() - site.founded %> năm kinh nghiệm, quy trình quản lý chuẩn ISO và đội ngũ kỹ sư chuyên sâu, HCM cam kết mang lại giải pháp tối ưu nhất cho ngân sách và mục tiêu của bạn.</p>
+      <p><a class="btn btn-gold" href="/lien-he?dich_vu=<%= encodeURIComponent(service.title) %>#form">Yêu cầu báo giá dịch vụ này <%- include('../partials/icon', { name: 'arrow', size: 18 }) %></a></p>
+    </div>
+    <aside class="detail-aside reveal">
+      <div class="aside-card">
+        <h3>Dịch vụ khác</h3>
+        <ul class="aside-links">
+          <% services.filter(s => s.slug !== service.slug).forEach(s => { %>
+            <li><a href="/dich-vu/<%= s.slug %>"><%- include('../partials/icon', { name: s.icon, size: 20 }) %> <%= s.title %></a></li>
+          <% }) %>
+        </ul>
+      </div>
+      <div class="aside-card aside-card-dark">
+        <h3>Cần tư vấn ngay?</h3>
+        <p>Kỹ sư của chúng tôi sẵn sàng hỗ trợ bạn.</p>
+        <a class="btn btn-gold btn-block" href="tel:<%= site.phoneHref %>"><%- include('../partials/icon', { name: 'phone', size: 18 }) %> <%= site.phone %></a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

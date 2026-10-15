@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title %></title>
+  <meta name="description" content="<%= typeof description !== 'undefined' ? description : site.description %>">
+  <link rel="canonical" href="<%= canonical %>">
+  <meta name="theme-color" content="#111315">
+
+  <meta property="og:site_name" content="<%= site.name %>">
+  <meta property="og:type" content="<%= typeof ogType !== 'undefined' ? ogType : 'website' %>">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= typeof description !== 'undefined' ? description : site.description %>">
+  <meta property="og:url" content="<%= canonical %>">
+  <meta property="og:image" content="<%= img('photo-1486406146926-c627a92ad1ab', 1200) %>">
+  <meta property="og:locale" content="vi_VN">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap&subset=vietnamese">
+  <link rel="stylesheet" href="/css/main.css?v=1">
+  <script src="/js/main.js?v=1" defer></script>
+
+  <script type="application/ld+json"><%- JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'GeneralContractor',
+    name: site.legalName,
+    alternateName: site.name,
+    url: site.url,
+    telephone: site.phoneHref,
+    email: site.email,
+    foundingDate: String(site.founded),
+    address: { '@type': 'PostalAddress', streetAddress: site.address, addressLocality: 'Hồ Chí Minh', addressCountry: 'VN' },
+    sameAs: Object.values(site.social)
+  }).replace(/</g, '\\u003c') %></script>
+</head>
+<body class="<%= typeof bodyClass !== 'undefined' ? bodyClass : '' %>">
+<a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>

@@ -1,0 +1,52 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<%- include('../partials/page-hero', {
+  image: project.image,
+  eyebrow: (projectCategories.find(c => c.key === project.category) || {}).label || 'Dự án',
+  heading: project.title,
+  lead: project.summary,
+  crumbs: [{ href: '/du-an', label: 'Dự án' }, { label: project.title }]
+}) %>
+
+<section class="section">
+  <div class="container">
+    <dl class="facts reveal">
+      <div><dt>Địa điểm</dt><dd><%= project.location %></dd></div>
+      <div><dt>Chủ đầu tư</dt><dd><%= project.client %></dd></div>
+      <div><dt>Quy mô</dt><dd><%= project.scale %></dd></div>
+      <div><dt>Diện tích sàn</dt><dd><%= project.area %></dd></div>
+      <div><dt>Hoàn thành</dt><dd><%= project.year %></dd></div>
+    </dl>
+    <div class="detail-layout">
+      <div class="prose reveal">
+        <h2>Về dự án</h2>
+        <% project.body.forEach(p => { %><p><%= p %></p><% }) %>
+        <figure class="prose-figure">
+          <img src="<%= img(project.image, 1400) %>" alt="<%= project.title %>" loading="lazy" width="1400" height="900">
+          <figcaption><%= project.title %> — <%= project.location %></figcaption>
+        </figure>
+      </div>
+      <aside class="detail-aside reveal">
+        <div class="aside-card aside-card-dark">
+          <h3>Bạn có dự án tương tự?</h3>
+          <p>Nhận tư vấn giải pháp và dự toán sơ bộ miễn phí trong 48 giờ.</p>
+          <a class="btn btn-gold btn-block" href="/lien-he#form">Liên hệ tư vấn</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section section-stone">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><p class="eyebrow">Khám phá thêm</p><h2>Dự án <em>khác</em></h2></div>
+      <a class="btn btn-outline" href="/du-an">Tất cả dự án</a>
+    </div>
+    <div class="project-grid">
+      <% related.forEach(p => { %><div class="reveal"><%- include('../partials/project-card', { p }) %></div><% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

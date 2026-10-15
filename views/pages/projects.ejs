@@ -1,0 +1,26 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<%- include('../partials/page-hero', {
+  image: 'photo-1460472178825-e5240623afd5',
+  eyebrow: 'Dự án',
+  heading: 'Công trình <em>tiêu biểu</em>',
+  lead: 'Mỗi dự án là một lời cam kết được thực hiện trọn vẹn.',
+  crumbs: [{ label: 'Dự án' }]
+}) %>
+
+<section class="section">
+  <div class="container">
+    <div class="filter" role="group" aria-label="Lọc dự án theo loại" data-filter>
+      <% projectCategories.forEach((c, i) => { %>
+        <button type="button" class="filter-btn" data-filter-value="<%= c.key %>" aria-pressed="<%= i === 0 %>"><%= c.label %></button>
+      <% }) %>
+    </div>
+    <div class="project-grid" data-filter-grid aria-live="polite">
+      <% projects.forEach((p, i) => { %>
+        <div class="project-grid-item reveal" data-category="<%= p.category %>" style="--d: <%= (i % 3) * 80 %>ms"><%- include('../partials/project-card', { p }) %></div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

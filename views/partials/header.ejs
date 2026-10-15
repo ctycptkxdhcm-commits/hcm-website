@@ -1,0 +1,36 @@
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="logo" href="/" aria-label="<%= site.name %> — Trang chủ">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="40" height="40"><rect x="1" y="1" width="38" height="38" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 30V10M30 30V10M10 20h20M20 10v20" stroke="currentColor" stroke-width="2.5"/></svg>
+      </span>
+      <span class="logo-text"><strong>HCM</strong><small>Construction</small></span>
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label="Điều hướng chính" data-nav>
+      <ul>
+        <% site.nav.forEach(item => {
+             const active = item.href === '/' ? path === '/' : path.startsWith(item.href); %>
+          <li><a href="<%= item.href %>" <%- active ? 'aria-current="page"' : '' %>><%= item.label %></a></li>
+        <% }) %>
+      </ul>
+      <div class="nav-mobile-extra">
+        <a class="btn btn-gold" href="/lien-he">Nhận tư vấn miễn phí</a>
+        <a class="nav-phone" href="tel:<%= site.phoneHref %>"><%- include('icon', { name: 'phone', size: 18 }) %> <%= site.phone %></a>
+      </div>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-phone" href="tel:<%= site.phoneHref %>">
+        <%- include('icon', { name: 'phone', size: 18 }) %>
+        <span><%= site.phone %></span>
+      </a>
+      <a class="btn btn-gold btn-sm header-cta" href="/lien-he">Nhận tư vấn</a>
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Mở menu" data-nav-toggle>
+        <span class="nav-toggle-open"><%- include('icon', { name: 'menu', size: 24 }) %></span>
+        <span class="nav-toggle-close"><%- include('icon', { name: 'close', size: 24 }) %></span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main">

@@ -1,0 +1,87 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<%- include('../partials/page-hero', {
+  image: 'photo-1497366216548-37526070297c',
+  eyebrow: 'Liên hệ',
+  heading: 'Hãy bắt đầu <em>trò chuyện</em>',
+  lead: 'Để lại thông tin, kỹ sư của chúng tôi sẽ liên hệ trong vòng 24 giờ làm việc.',
+  crumbs: [{ label: 'Liên hệ' }]
+}) %>
+
+<section class="section" id="form">
+  <div class="container contact-layout">
+    <div class="contact-info reveal">
+      <p class="eyebrow">Thông tin liên hệ</p>
+      <h2>Văn phòng <em>HCM</em></h2>
+      <ul class="contact-list">
+        <li><span class="contact-icon"><%- include('../partials/icon', { name: 'pin', size: 22 }) %></span><div><strong>Địa chỉ</strong><p><%= site.address %></p></div></li>
+        <li><span class="contact-icon"><%- include('../partials/icon', { name: 'phone', size: 22 }) %></span><div><strong>Hotline</strong><p><a href="tel:<%= site.phoneHref %>"><%= site.phone %></a></p></div></li>
+        <li><span class="contact-icon"><%- include('../partials/icon', { name: 'mail', size: 22 }) %></span><div><strong>Email</strong><p><a href="mailto:<%= site.email %>"><%= site.email %></a></p></div></li>
+        <li><span class="contact-icon"><%- include('../partials/icon', { name: 'clock', size: 22 }) %></span><div><strong>Giờ làm việc</strong><p><%= site.hours %></p></div></li>
+      </ul>
+    </div>
+
+    <div class="contact-form-wrap reveal">
+      <% if (status === 'sent') { %>
+        <div class="alert alert-success" role="status" tabindex="-1" data-focus>
+          <%- include('../partials/icon', { name: 'check', size: 22 }) %>
+          <div><strong>Cảm ơn bạn đã liên hệ!</strong><p>Chúng tôi đã nhận được yêu cầu và sẽ phản hồi trong vòng 24 giờ làm việc.</p></div>
+        </div>
+      <% } else { %>
+        <% if (status === 'invalid') { %>
+          <div class="alert alert-error" role="alert" tabindex="-1" data-focus>
+            <strong>Vui lòng kiểm tra lại <%= Object.keys(errors).length %> trường thông tin bên dưới.</strong>
+          </div>
+        <% } else if (status === 'error') { %>
+          <div class="alert alert-error" role="alert" tabindex="-1" data-focus>
+            <strong>Chưa gửi được yêu cầu.</strong> Vui lòng thử lại hoặc gọi <a href="tel:<%= site.phoneHref %>"><%= site.phone %></a>.
+          </div>
+        <% } %>
+
+        <form class="form" method="post" action="/lien-he" novalidate data-contact-form>
+          <h2 class="form-title">Gửi yêu cầu tư vấn</h2>
+          <div class="form-grid">
+            <% const field = (name, label, type, attrs) => { const err = errors[name]; %>
+              <div class="field <%= err ? 'has-error' : '' %>">
+                <label for="f-<%= name %>"><%= label %> <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-<%= name %>" name="<%= name %>" type="<%= type %>" value="<%= values[name] || '' %>" required <%- attrs %> <%- err ? `aria-invalid="true" aria-describedby="e-${name}"` : '' %>>
+                <% if (err) { %><p class="field-error" id="e-<%= name %>"><%= err %></p><% } %>
+              </div>
+            <% } %>
+            <% field('name', 'Họ và tên', 'text', 'autocomplete="name" maxlength="100"') %>
+            <% field('phone', 'Số điện thoại', 'tel', 'autocomplete="tel" inputmode="tel" maxlength="20"') %>
+            <% field('email', 'Email', 'email', 'autocomplete="email" maxlength="120"') %>
+            <div class="field">
+              <label for="f-service">Dịch vụ quan tâm</label>
+              <select id="f-service" name="service">
+                <option value="">— Chọn dịch vụ —</option>
+                <% services.forEach(s => { %><option <%= values.service === s.title ? 'selected' : '' %>><%= s.title %></option><% }) %>
+                <option <%= values.service === 'Khác' ? 'selected' : '' %>>Khác</option>
+              </select>
+            </div>
+            <div class="field field-full <%= errors.message ? 'has-error' : '' %>">
+              <label for="f-message">Mô tả nhu cầu <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="f-message" name="message" rows="5" required maxlength="3000" <%- errors.message ? 'aria-invalid="true" aria-describedby="e-message"' : '' %> placeholder="Loại công trình, địa điểm, diện tích, ngân sách dự kiến…"><%= values.message || '' %></textarea>
+              <% if (errors.message) { %><p class="field-error" id="e-message"><%= errors.message %></p><% } %>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="f-website">Website</label>
+              <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+          </div>
+          <p class="form-note">Thông tin của bạn được bảo mật và chỉ dùng để liên hệ tư vấn.</p>
+          <button class="btn btn-gold btn-lg" type="submit" data-submit>
+            <span class="btn-label">Gửi yêu cầu</span>
+            <span class="btn-loading">Đang gửi…</span>
+          </button>
+        </form>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<section class="map" aria-label="Bản đồ văn phòng">
+  <iframe src="<%= site.mapEmbed %>" title="Bản đồ văn phòng <%= site.name %>" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+<%- include('../partials/footer') %>

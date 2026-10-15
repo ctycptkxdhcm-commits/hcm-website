@@ -1,0 +1,10 @@
+<article class="post-card">
+  <a class="post-card-media" href="/tin-tuc/<%= p.slug %>" tabindex="-1" aria-hidden="true">
+    <img src="<%= img(p.image, 800) %>" alt="" loading="lazy" width="800" height="500">
+  </a>
+  <div class="post-card-body">
+    <p class="post-card-meta"><span class="tag"><%= p.category %></span> <time datetime="<%= p.date.toISOString().slice(0,10) %>"><%= formatDate(p.date) %></time></p>
+    <h3><a href="/tin-tuc/<%= p.slug %>"><%= p.title %></a></h3>
+    <p><%= p.excerpt %></p>
+  </div>
+</article>

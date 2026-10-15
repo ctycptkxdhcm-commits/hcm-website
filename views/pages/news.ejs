@@ -1,0 +1,34 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<%- include('../partials/page-hero', {
+  image: 'photo-1429497419816-9ca5cfb4571a',
+  eyebrow: 'Tin tức',
+  heading: 'Tin tức & <em>kiến thức</em>',
+  lead: 'Cập nhật hoạt động doanh nghiệp, kinh nghiệm xây dựng và xu hướng thị trường.',
+  crumbs: [{ label: 'Tin tức' }]
+}) %>
+
+<section class="section">
+  <div class="container">
+    <% if (!posts.length) { %>
+      <p class="empty">Chưa có bài viết nào. Hãy quay lại sau nhé.</p>
+    <% } else { const [first, ...rest] = posts; %>
+      <article class="post-featured reveal">
+        <a class="post-featured-media" href="/tin-tuc/<%= first.slug %>" tabindex="-1" aria-hidden="true">
+          <img src="<%= img(first.image, 1400) %>" alt="" width="1400" height="900">
+        </a>
+        <div class="post-featured-body">
+          <p class="post-card-meta"><span class="tag"><%= first.category %></span> <time datetime="<%= first.date.toISOString().slice(0,10) %>"><%= formatDate(first.date) %></time> · <%= first.readingTime %> phút đọc</p>
+          <h2><a href="/tin-tuc/<%= first.slug %>"><%= first.title %></a></h2>
+          <p><%= first.excerpt %></p>
+          <a class="link-arrow" href="/tin-tuc/<%= first.slug %>">Đọc bài viết <%- include('../partials/icon', { name: 'arrow', size: 18 }) %></a>
+        </div>
+      </article>
+      <div class="post-grid">
+        <% rest.forEach((p, i) => { %><div class="reveal" style="--d: <%= (i % 3) * 80 %>ms"><%- include('../partials/post-card', { p }) %></div><% }) %>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

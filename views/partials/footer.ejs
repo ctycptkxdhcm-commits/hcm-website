@@ -1,0 +1,66 @@
+</main>
+
+<section class="cta-band">
+  <div class="container cta-band-inner reveal">
+    <div>
+      <p class="eyebrow eyebrow-light">Bắt đầu dự án của bạn</p>
+      <h2>Có một công trình trong đầu? <em>Hãy cùng hiện thực hóa.</em></h2>
+    </div>
+    <div class="cta-band-actions">
+      <a class="btn btn-gold btn-lg" href="/lien-he">Nhận tư vấn & báo giá <%- include('icon', { name: 'arrow', size: 18 }) %></a>
+      <a class="btn btn-ghost-light btn-lg" href="tel:<%= site.phoneHref %>"><%- include('icon', { name: 'phone', size: 18 }) %> <%= site.phone %></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo logo-light" href="/" aria-label="<%= site.name %> — Trang chủ">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="40" height="40"><rect x="1" y="1" width="38" height="38" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 30V10M30 30V10M10 20h20M20 10v20" stroke="currentColor" stroke-width="2.5"/></svg>
+        </span>
+        <span class="logo-text"><strong>HCM</strong><small>Construction</small></span>
+      </a>
+      <p><%= site.legalName %> — <%= site.tagline.toLowerCase() %> từ năm <%= site.founded %>.</p>
+      <div class="social">
+        <a href="<%= site.social.facebook %>" aria-label="Facebook" rel="noopener" target="_blank"><%- include('icon', { name: 'facebook', size: 20 }) %></a>
+        <a href="<%= site.social.youtube %>" aria-label="YouTube" rel="noopener" target="_blank"><%- include('icon', { name: 'youtube', size: 20 }) %></a>
+        <a href="<%= site.social.linkedin %>" aria-label="LinkedIn" rel="noopener" target="_blank"><%- include('icon', { name: 'linkedin', size: 20 }) %></a>
+        <a href="<%= site.social.zalo %>" aria-label="Zalo" rel="noopener" target="_blank"><%- include('icon', { name: 'chat', size: 20 }) %></a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="footer-title">Dịch vụ</h3>
+      <ul class="footer-links">
+        <% services.forEach(s => { %><li><a href="/dich-vu/<%= s.slug %>"><%= s.title %></a></li><% }) %>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="footer-title">Công ty</h3>
+      <ul class="footer-links">
+        <% site.nav.slice(1).forEach(n => { %><li><a href="<%= n.href %>"><%= n.label %></a></li><% }) %>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="footer-title">Liên hệ</h3>
+      <ul class="footer-contact">
+        <li><%- include('icon', { name: 'pin', size: 18 }) %><span><%= site.address %></span></li>
+        <li><%- include('icon', { name: 'phone', size: 18 }) %><a href="tel:<%= site.phoneHref %>"><%= site.phone %></a></li>
+        <li><%- include('icon', { name: 'mail', size: 18 }) %><a href="mailto:<%= site.email %>"><%= site.email %></a></li>
+        <li><%- include('icon', { name: 'clock', size: 18 }) %><span><%= site.hours %></span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© <%= year %> <%= site.legalName %>. Bảo lưu mọi quyền.</p>
+    <a href="#main" class="back-top">Lên đầu trang ↑</a>
+  </div>
+</footer>
+
+<a class="float-call" href="tel:<%= site.phoneHref %>" aria-label="Gọi <%= site.phone %>"><%- include('icon', { name: 'phone', size: 22 }) %></a>
+</body>
+</html>

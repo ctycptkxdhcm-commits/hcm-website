@@ -1,0 +1,117 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<%- include('../partials/page-hero', {
+  image: 'photo-1487958449943-2429e8be8625',
+  eyebrow: 'Giới thiệu',
+  heading: 'Hơn một thập kỷ <em>xây niềm tin</em>',
+  lead: 'Từ một đội thi công nhỏ năm ' + site.founded + ', HCM đã trở thành tổng thầu uy tín với hàng trăm công trình trên khắp cả nước.',
+  crumbs: [{ label: 'Giới thiệu' }]
+}) %>
+
+<section class="section">
+  <div class="container split">
+    <div class="split-content reveal">
+      <p class="eyebrow">Câu chuyện của chúng tôi</p>
+      <h2>Xây dựng bằng <em>tâm</em>, vận hành bằng <em>chuẩn mực</em></h2>
+      <p class="lead">Mỗi công trình HCM thực hiện đều mang theo cam kết: an toàn tuyệt đối, chất lượng vượt kỳ vọng và minh bạch với khách hàng.</p>
+      <p>Thành lập năm <%= site.founded %> tại TP. Hồ Chí Minh, <%= site.legalName %> khởi đầu với những công trình nhà ở dân dụng. Nhờ sự tín nhiệm của khách hàng, chúng tôi lớn mạnh thành tổng thầu Design & Build cho các dự án cao tầng, nhà máy FDI và khu đô thị.</p>
+      <p>Hôm nay, HCM sở hữu đội ngũ hơn 450 nhân sự, hệ thống thiết bị thi công hiện đại và mạng lưới đối tác cung ứng vật liệu uy tín trong và ngoài nước.</p>
+    </div>
+    <div class="split-media reveal">
+      <img src="<%= img('photo-1504307651254-35680f356dfd', 1100) %>" alt="Đội ngũ kỹ sư HCM tại công trường" loading="lazy" width="1100" height="1300">
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head section-head-center reveal">
+      <p class="eyebrow eyebrow-light">Định hướng</p>
+      <h2>Tầm nhìn & <em>sứ mệnh</em></h2>
+    </div>
+    <div class="vm-grid">
+      <div class="vm-card reveal">
+        <%- include('../partials/icon', { name: 'target', size: 32 }) %>
+        <h3>Tầm nhìn</h3>
+        <p>Trở thành Top 10 tổng thầu xây dựng hàng đầu Việt Nam vào năm 2030, tiên phong ứng dụng công nghệ BIM và xây dựng xanh.</p>
+      </div>
+      <div class="vm-card reveal" style="--d: 100ms">
+        <%- include('../partials/icon', { name: 'layers', size: 32 }) %>
+        <h3>Sứ mệnh</h3>
+        <p>Kiến tạo những công trình an toàn, bền vững và có giá trị lâu dài — góp phần nâng tầm chất lượng sống và hạ tầng đất nước.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head-center reveal">
+      <p class="eyebrow">Giá trị cốt lõi</p>
+      <h2>Điều làm nên <em>HCM</em></h2>
+    </div>
+    <div class="values-grid">
+      <% [
+        ['shield', 'An toàn', 'Không có công trình nào quan trọng hơn sự an toàn của con người.'],
+        ['award', 'Chất lượng', 'Kiểm soát chất lượng ở từng hạng mục, từng mẻ bê tông.'],
+        ['clock', 'Đúng hẹn', 'Tiến độ là cam kết — được bảo đảm bằng hợp đồng.'],
+        ['leaf', 'Bền vững', 'Ưu tiên vật liệu và giải pháp thân thiện với môi trường.']
+      ].forEach(([icon, t, d], i) => { %>
+        <div class="value-card reveal" style="--d: <%= i * 80 %>ms">
+          <span class="value-icon"><%- include('../partials/icon', { name: icon, size: 28 }) %></span>
+          <h3><%= t %></h3>
+          <p><%= d %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-stone">
+  <div class="container">
+    <div class="section-head section-head-center reveal">
+      <p class="eyebrow">Chặng đường phát triển</p>
+      <h2>Những <em>cột mốc</em> đáng nhớ</h2>
+    </div>
+    <ol class="timeline">
+      <% [
+        [site.founded, 'Thành lập công ty', 'Khởi đầu với 20 nhân sự và các công trình nhà ở dân dụng tại TP. HCM.'],
+        [2013, 'Đạt chứng nhận ISO 9001', 'Chuẩn hóa toàn bộ quy trình quản lý chất lượng.'],
+        [2017, 'Mở rộng sang công nghiệp', 'Thi công nhà máy FDI đầu tiên tại KCN VSIP.'],
+        [2021, 'Ứng dụng BIM toàn diện', 'Áp dụng BIM Level 2 cho 100% dự án cao tầng.'],
+        [2024, 'Top 50 nhà thầu Việt Nam', 'Doanh thu vượt mốc 2.000 tỷ đồng, hơn 450 nhân sự.']
+      ].forEach(([y, t, d], i) => { %>
+        <li class="timeline-item reveal" style="--d: <%= i * 80 %>ms">
+          <span class="timeline-year"><%= y %></span>
+          <div><h3><%= t %></h3><p><%= d %></p></div>
+        </li>
+      <% }) %>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head-center reveal">
+      <p class="eyebrow">Ban lãnh đạo</p>
+      <h2>Những người <em>dẫn dắt</em></h2>
+    </div>
+    <div class="team-grid">
+      <% [
+        ['Nguyễn Văn A', 'Chủ tịch HĐQT', 'TS. Kỹ thuật xây dựng, 25 năm kinh nghiệm'],
+        ['Trần Thị B', 'Tổng Giám đốc', 'MBA, nguyên PM các dự án cao tầng quốc tế'],
+        ['Lê Văn C', 'Giám đốc Kỹ thuật', 'Kỹ sư kết cấu, chuyên gia BIM'],
+        ['Phạm Thị D', 'Giám đốc Tài chính', 'CPA, 18 năm trong ngành xây dựng']
+      ].forEach(([n, r, d], i) => { %>
+        <div class="team-card reveal" style="--d: <%= i * 80 %>ms">
+          <div class="team-avatar" aria-hidden="true"><%= n.split(' ').pop()[0] %></div>
+          <h3><%= n %></h3>
+          <p class="team-role"><%= r %></p>
+          <p><%= d %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

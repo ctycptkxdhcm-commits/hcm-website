@@ -1,0 +1,167 @@
+<%- include('../partials/head', { bodyClass: 'is-home' }) %>
+<%- include('../partials/header') %>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-bg" src="<%= img('photo-1541888946425-d81bb19240f5', 2000, 72) %>" alt="" width="2000" height="1333" fetchpriority="high">
+  <div class="container hero-inner">
+    <p class="eyebrow eyebrow-light hero-anim">Tổng thầu xây dựng · Từ <%= site.founded %></p>
+    <h1 class="hero-title hero-anim">Kiến tạo công trình <em>bền vững</em> cho tương lai</h1>
+    <p class="hero-lead hero-anim">Thiết kế & thi công trọn gói công trình dân dụng, công nghiệp và nhà ở cao cấp — chất lượng chuẩn quốc tế, đúng tiến độ, minh bạch từng chi phí.</p>
+    <div class="hero-actions hero-anim">
+      <a class="btn btn-gold btn-lg" href="/lien-he">Nhận tư vấn miễn phí <%- include('../partials/icon', { name: 'arrow', size: 18 }) %></a>
+      <a class="btn btn-ghost-light btn-lg" href="/du-an">Xem dự án tiêu biểu</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="container hero-stats-grid">
+      <% site.stats.forEach(s => { %>
+        <div class="stat">
+          <p class="stat-value"><span data-count="<%= s.value %>" data-decimals="<%= s.decimals || 0 %>"><%= s.value.toLocaleString('vi-VN') %></span><span class="stat-suffix"><%= s.suffix %></span></p>
+          <p class="stat-label"><%= s.label %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust" aria-label="Chứng nhận và đối tác">
+  <div class="container trust-inner">
+    <p class="trust-label">Chứng nhận & tiêu chuẩn</p>
+    <ul class="trust-list">
+      <li>ISO 9001:2015</li>
+      <li>ISO 45001:2018</li>
+      <li>ISO 14001</li>
+      <li>LEED AP</li>
+      <li>BIM Level 2</li>
+      <li>Top 50 Nhà thầu VN</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container split">
+    <div class="split-media reveal">
+      <img src="<%= img('photo-1503387762-592deb58ef4e', 1100) %>" alt="Kỹ sư HCM xem bản vẽ thiết kế tại công trường" loading="lazy" width="1100" height="1300">
+      <div class="split-badge">
+        <strong><%= new Date().getFullYear() - site.founded %>+</strong>
+        <span>năm kiến tạo<br>công trình</span>
+      </div>
+    </div>
+    <div class="split-content reveal">
+      <p class="eyebrow">Về chúng tôi</p>
+      <h2>Đối tác xây dựng <em>tin cậy</em> của hơn 300 chủ đầu tư</h2>
+      <p class="lead"><%= site.legalName %> là tổng thầu thiết kế – thi công với đội ngũ hơn 450 kỹ sư, kiến trúc sư và chuyên gia quản lý dự án.</p>
+      <p>Chúng tôi tin rằng một công trình tốt bắt đầu từ sự thấu hiểu. Mỗi dự án được quản lý bằng quy trình chuẩn ISO, mô hình BIM và báo cáo tiến độ minh bạch hằng tuần — để chủ đầu tư luôn yên tâm từ ngày khởi công đến lúc bàn giao.</p>
+      <ul class="checklist">
+        <li><%- include('../partials/icon', { name: 'check', size: 18 }) %> Cam kết tiến độ bằng điều khoản phạt hợp đồng</li>
+        <li><%- include('../partials/icon', { name: 'check', size: 18 }) %> Bảo hành kết cấu 10 năm, hoàn thiện 24 tháng</li>
+        <li><%- include('../partials/icon', { name: 'check', size: 18 }) %> Dự toán chi tiết, không phát sinh ngoài hợp đồng</li>
+      </ul>
+      <a class="link-arrow" href="/gioi-thieu">Tìm hiểu về HCM <%- include('../partials/icon', { name: 'arrow', size: 18 }) %></a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow eyebrow-light">Lĩnh vực hoạt động</p>
+        <h2>Giải pháp xây dựng <em>toàn diện</em></h2>
+      </div>
+      <p class="section-head-text">Từ nhà xưởng hàng chục nghìn mét vuông đến biệt thự tinh tế — một đầu mối, một tiêu chuẩn chất lượng.</p>
+    </div>
+    <div class="service-grid">
+      <% services.forEach((s, i) => { %>
+        <a class="service-card reveal" href="/dich-vu/<%= s.slug %>" style="--d: <%= i * 80 %>ms">
+          <span class="service-num"><%= String(i + 1).padStart(2, '0') %></span>
+          <span class="service-icon"><%- include('../partials/icon', { name: s.icon, size: 28 }) %></span>
+          <h3><%= s.title %></h3>
+          <p><%= s.summary %></p>
+          <span class="service-more">Chi tiết <%- include('../partials/icon', { name: 'arrow', size: 16 }) %></span>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Dự án tiêu biểu</p>
+        <h2>Công trình mang <em>dấu ấn</em> HCM</h2>
+      </div>
+      <a class="btn btn-outline" href="/du-an">Tất cả dự án <%- include('../partials/icon', { name: 'arrow', size: 18 }) %></a>
+    </div>
+    <div class="bento">
+      <% projects.forEach((p, i) => { %>
+        <div class="bento-item bento-<%= i %> reveal" style="--d: <%= i * 80 %>ms"><%- include('../partials/project-card', { p }) %></div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section section-stone">
+  <div class="container">
+    <div class="section-head section-head-center reveal">
+      <p class="eyebrow">Quy trình làm việc</p>
+      <h2>5 bước rõ ràng, <em>không bất ngờ</em></h2>
+    </div>
+    <ol class="process">
+      <% [
+        ['Khảo sát & tư vấn', 'Gặp gỡ, khảo sát hiện trạng và lắng nghe nhu cầu, ngân sách của bạn.'],
+        ['Thiết kế & dự toán', 'Phương án kiến trúc, phối cảnh 3D và dự toán chi tiết từng hạng mục.'],
+        ['Ký hợp đồng', 'Hợp đồng minh bạch với tiến độ, chi phí và điều khoản bảo hành rõ ràng.'],
+        ['Thi công & giám sát', 'Báo cáo tiến độ hằng tuần, nghiệm thu từng giai đoạn cùng chủ đầu tư.'],
+        ['Bàn giao & bảo hành', 'Bàn giao đúng hẹn, hồ sơ hoàn công đầy đủ, bảo hành dài hạn.']
+      ].forEach(([t, d], i) => { %>
+        <li class="process-step reveal" style="--d: <%= i * 100 %>ms">
+          <span class="process-num"><%= String(i + 1).padStart(2, '0') %></span>
+          <h3><%= t %></h3>
+          <p><%= d %></p>
+        </li>
+      <% }) %>
+    </ol>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section testimonial-section">
+  <div class="container testimonial reveal">
+    <svg class="quote-mark" viewBox="0 0 48 48" width="56" height="56" aria-hidden="true"><path fill="currentColor" d="M12 34c-4 0-7-3-7-8 0-8 6-15 13-17l2 3c-5 2-8 6-8 9 3 0 6 3 6 6s-3 7-6 7zm22 0c-4 0-7-3-7-8 0-8 6-15 13-17l2 3c-5 2-8 6-8 9 3 0 6 3 6 6s-3 7-6 7z"/></svg>
+    <blockquote>
+      <p>“HCM bàn giao nhà máy sớm hơn 3 tuần so với kế hoạch, chất lượng đạt mọi tiêu chí kiểm định của tập đoàn. Sự chuyên nghiệp và minh bạch của đội ngũ là lý do chúng tôi tiếp tục hợp tác cho giai đoạn 2.”</p>
+      <footer>
+        <strong>Ông Tanaka Hiroshi</strong>
+        <span>Giám đốc Dự án — Nhà máy Điện tử Long An</span>
+      </footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- NEWS -->
+<% if (posts.length) { %>
+<section class="section section-stone">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Tin tức & kiến thức</p>
+        <h2>Góc nhìn từ <em>công trường</em></h2>
+      </div>
+      <a class="btn btn-outline" href="/tin-tuc">Xem tất cả <%- include('../partials/icon', { name: 'arrow', size: 18 }) %></a>
+    </div>
+    <div class="post-grid">
+      <% posts.forEach((p, i) => { %><div class="reveal" style="--d: <%= i * 80 %>ms"><%- include('../partials/post-card', { p }) %></div><% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,10 @@
+<a class="project-card" href="/du-an/<%= p.slug %>" data-category="<%= p.category %>">
+  <div class="project-card-media">
+    <img src="<%= img(p.image, 900) %>" alt="<%= p.title %> — <%= p.location %>" loading="lazy" width="900" height="675">
+  </div>
+  <div class="project-card-body">
+    <p class="project-card-meta"><%= p.location %> · <%= p.year %></p>
+    <h3><%= p.title %></h3>
+    <span class="project-card-arrow" aria-hidden="true"><%- include('icon', { name: 'arrowUpRight', size: 20 }) %></span>
+  </div>
+</a>

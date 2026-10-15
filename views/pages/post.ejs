@@ -1,0 +1,41 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<article>
+  <header class="post-header">
+    <div class="container container-narrow">
+      <nav class="breadcrumb breadcrumb-dark" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Trang chủ</a></li>
+          <li><a href="/tin-tuc">Tin tức</a></li>
+          <li><span aria-current="page"><%= post.category %></span></li>
+        </ol>
+      </nav>
+      <h1><%= post.title %></h1>
+      <p class="post-meta">
+        <span><%= post.author %></span> ·
+        <time datetime="<%= post.date.toISOString().slice(0,10) %>"><%= formatDate(post.date) %></time> ·
+        <span><%= post.readingTime %> phút đọc</span>
+      </p>
+    </div>
+  </header>
+  <div class="container container-wide">
+    <img class="post-cover" src="<%= img(post.image, 1600) %>" alt="<%= post.title %>" width="1600" height="900" fetchpriority="high">
+  </div>
+  <div class="container container-narrow prose post-body">
+    <%- post.html %>
+  </div>
+</article>
+
+<% if (related.length) { %>
+<section class="section section-stone">
+  <div class="container">
+    <div class="section-head reveal"><div><p class="eyebrow">Đọc thêm</p><h2>Bài viết <em>liên quan</em></h2></div></div>
+    <div class="post-grid">
+      <% related.forEach(p => { %><div class="reveal"><%- include('../partials/post-card', { p }) %></div><% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,16 @@
+<section class="page-hero">
+  <img class="page-hero-bg" src="<%= img(image, 1920, 70) %>" alt="" width="1920" height="800" fetchpriority="high">
+  <div class="container page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Trang chủ</a></li>
+        <% (crumbs || []).forEach((c, i) => { %>
+          <li><% if (c.href) { %><a href="<%= c.href %>"><%= c.label %></a><% } else { %><span aria-current="page"><%= c.label %></span><% } %></li>
+        <% }) %>
+      </ol>
+    </nav>
+    <p class="eyebrow eyebrow-light"><%= eyebrow %></p>
+    <h1><%- heading %></h1>
+    <% if (typeof lead !== 'undefined' && lead) { %><p class="page-hero-lead"><%= lead %></p><% } %>
+  </div>
+</section>

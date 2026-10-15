@@ -1,0 +1,32 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<%- include('../partials/page-hero', {
+  image: 'photo-1531834685032-c34bf0d84c77',
+  eyebrow: 'Dịch vụ',
+  heading: 'Giải pháp xây dựng <em>trọn gói</em>',
+  lead: 'Sáu lĩnh vực chuyên sâu, một tiêu chuẩn chất lượng duy nhất.',
+  crumbs: [{ label: 'Dịch vụ' }]
+}) %>
+
+<section class="section">
+  <div class="container service-list">
+    <% services.forEach((s, i) => { %>
+      <article class="service-row reveal <%= i % 2 ? 'is-reverse' : '' %>">
+        <div class="service-row-media">
+          <img src="<%= img(s.image, 1100) %>" alt="<%= s.title %>" loading="lazy" width="1100" height="800">
+        </div>
+        <div class="service-row-body">
+          <span class="service-num"><%= String(i + 1).padStart(2, '0') %></span>
+          <h2><%= s.title %></h2>
+          <p class="lead"><%= s.summary %></p>
+          <ul class="checklist checklist-2">
+            <% s.features.forEach(f => { %><li><%- include('../partials/icon', { name: 'check', size: 18 }) %> <%= f %></li><% }) %>
+          </ul>
+          <a class="btn btn-dark" href="/dich-vu/<%= s.slug %>">Xem chi tiết <%- include('../partials/icon', { name: 'arrow', size: 18 }) %></a>
+        </div>
+      </article>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
